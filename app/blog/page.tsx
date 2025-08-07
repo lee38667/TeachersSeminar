@@ -8,7 +8,11 @@ export default function Blog() {
       date: "December 15, 2024",
       category: "Event Highlights",
       readTime: "5 min read",
-      image: "🌊",
+      image: (
+        <svg className="w-16 h-16 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 10l-2 1m0 0l-2-1m2 1v2.5M20 7l-2 1m2-1l-2-1m2 1v2.5M14 4l-2-1-2 1M4 7l2-1M4 7l2 1M4 7v2.5M12 21l-2-1m2 1l2-1m-2 1v-2.5M6 18l-2-1v-2.5M18 18l2-1v-2.5" />
+        </svg>
+      ),
       color: "from-blue-500 to-teal-500"
     },
     {
@@ -19,7 +23,11 @@ export default function Blog() {
       date: "November 28, 2024",
       category: "Teacher Stories",
       readTime: "7 min read",
-      image: "🏛️",
+      image: (
+        <svg className="w-16 h-16 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+        </svg>
+      ),
       color: "from-green-500 to-emerald-500"
     },
     {
@@ -30,7 +38,11 @@ export default function Blog() {
       date: "November 15, 2024",
       category: "Best Practices",
       readTime: "6 min read",
-      image: "🌱",
+      image: (
+        <svg className="w-16 h-16 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+        </svg>
+      ),
       color: "from-purple-500 to-indigo-500"
     },
     {
@@ -52,7 +64,11 @@ export default function Blog() {
       date: "October 20, 2024",
       category: "Technology",
       readTime: "8 min read",
-      image: "💻",
+      image: (
+        <svg className="w-16 h-16 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+        </svg>
+      ),
       color: "from-orange-500 to-red-500"
     },
     {
@@ -63,7 +79,11 @@ export default function Blog() {
       date: "October 5, 2024",
       category: "Research",
       readTime: "10 min read",
-      image: "🌍",
+      image: (
+        <svg className="w-16 h-16 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+      ),
       color: "from-cyan-500 to-blue-500"
     }
   ];
@@ -94,8 +114,11 @@ export default function Blog() {
         <div className="container mx-auto px-8 relative z-10">
           <div className="max-w-4xl">
             <div className="mb-8">
-              <span className="inline-block px-6 py-3 bg-white/20 backdrop-blur-sm text-white font-medium text-sm uppercase tracking-wider border-l-4 border-yellow-400">
-                📝 Community Voices
+              <span className="inline-block px-6 py-3 bg-white/20 backdrop-blur-sm text-white font-medium text-sm uppercase tracking-wider border-l-4 border-yellow-400 flex items-center gap-2">
+                <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+                </svg>
+                Community Voices
               </span>
             </div>
             
@@ -111,12 +134,12 @@ export default function Blog() {
             
             <div className="flex flex-wrap gap-6">
               <div className="impact-card bg-white/10 backdrop-blur-md border-white/20 p-6 animate-expand-in">
-                <div className="text-2xl font-bold text-white mb-2">50+ Stories</div>
-                <div className="text-white/80">Teacher experiences shared</div>
+                <div className="text-2xl font-bold text-gray-900 mb-2">50+ Stories</div>
+                <div className="text-gray-700">Teacher experiences shared</div>
               </div>
               <div className="impact-card bg-white/10 backdrop-blur-md border-white/20 p-6 animate-expand-in" style={{animationDelay: '0.2s'}}>
-                <div className="text-2xl font-bold text-white mb-2">6 Categories</div>
-                <div className="text-white/80">Research to best practices</div>
+                <div className="text-2xl font-bold text-gray-900 mb-2">6 Categories</div>
+                <div className="text-gray-700">Research to best practices</div>
               </div>
             </div>
           </div>
@@ -257,8 +280,10 @@ export default function Blog() {
             </p>
             
             <div className="impact-card bg-white p-12 animate-expand-in">
-              <div className="w-20 h-20 bg-gradient-to-br from-purple-500 to-blue-500 mx-auto mb-8 flex items-center justify-center text-3xl" style={{clipPath: 'polygon(0 0, calc(100% - 15px) 0, 100% 15px, 100% 100%, 15px 100%, 0 calc(100% - 15px))'}}>
-                ✍️
+              <div className="w-20 h-20 bg-gradient-to-br from-purple-500 to-blue-500 mx-auto mb-8 flex items-center justify-center" style={{clipPath: 'polygon(0 0, calc(100% - 15px) 0, 100% 15px, 100% 100%, 15px 100%, 0 calc(100% - 15px))'}}>
+                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+                </svg>
               </div>
               
               <h3 className="text-2xl font-bold text-gray-900 mb-6">Become a Featured Voice</h3>

@@ -4,7 +4,11 @@ export default function Program() {
       name: "Dr. Maria Nghipangelwa",
       title: "Marine Biologist, UNAM",
       topic: "Namibian Coastal Ecosystems and Climate Change",
-      image: "🌊",
+      image: (
+        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+        </svg>
+      ),
       bio: "Leading researcher in marine conservation with 15+ years experience",
       color: "from-blue-500 to-teal-500"
     },
@@ -12,7 +16,11 @@ export default function Program() {
       name: "Ms. Leena M. Iileka",
       title: "Education Researcher, Van Rhyn Primary",
       topic: "Teacher-led Professional Development Models",
-      image: "📚",
+      image: (
+        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+        </svg>
+      ),
       bio: "Pioneer in teacher empowerment and environmental education integration",
       color: "from-green-500 to-emerald-500"
     },
@@ -20,7 +28,11 @@ export default function Program() {
       name: "Prof. Johannes Nakale",
       title: "Environmental Education Specialist, IUM",
       topic: "Indigenous Knowledge in Marine Conservation",
-      image: "🌍",
+      image: (
+        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+      ),
       bio: "Expert in traditional ecological knowledge and sustainable practices",
       color: "from-purple-500 to-indigo-500"
     },
@@ -28,7 +40,11 @@ export default function Program() {
       name: "Dr. Sarah Katjavivi",
       title: "Technology Integration Coordinator, UNESCO",
       topic: "Digital Tools for Environmental Education",
-      image: "💻",
+      image: (
+        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 17V7m0 10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h2a2 2 0 012 2m0 10a2 2 0 002 2h2a2 2 0 002-2M9 7a2 2 0 012-2h2a2 2 0 012 2m0 10V7m0 10a2 2 0 002 2h2a2 2 0 002-2V7a2 2 0 00-2-2h-2a2 2 0 00-2 2" />
+        </svg>
+      ),
       bio: "Specialist in educational technology and digital learning platforms",
       color: "from-orange-500 to-red-500"
     }
@@ -88,7 +104,10 @@ export default function Program() {
           <div className="max-w-4xl">
             <div className="mb-8">
               <span className="inline-block px-6 py-3 bg-white/20 backdrop-blur-sm text-white font-medium text-sm uppercase tracking-wider border-l-4 border-yellow-400">
-                📅 Two Days of Innovation
+                <svg className="w-4 h-4 inline-block mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                </svg>
+                Two Days of Innovation
               </span>
             </div>
             
@@ -105,12 +124,12 @@ export default function Program() {
             
             <div className="flex flex-wrap gap-6">
               <div className="impact-card bg-white/10 backdrop-blur-md border-white/20 p-6 animate-expand-in">
-                <div className="text-2xl font-bold text-white mb-2">📅 March 15-16, 2025</div>
-                <div className="text-white/80">Two transformative days</div>
+                <div className="text-2xl font-bold text-gray-900 mb-2">September 08-09, 2025</div>
+                <div className="text-gray-700">Two transformative days</div>
               </div>
               <div className="impact-card bg-white/10 backdrop-blur-md border-white/20 p-6 animate-expand-in" style={{animationDelay: '0.2s'}}>
-                <div className="text-2xl font-bold text-white mb-2">📍 Van Rhyn Primary School</div>
-                <div className="text-white/80">Windhoek, Namibia</div>
+                <div className="text-2xl font-bold text-gray-900 mb-2">Location: </div>
+                <div className="text-gray-700">TBA</div>
               </div>
             </div>
           </div>
@@ -133,7 +152,9 @@ export default function Program() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="impact-card p-6 animate-expand-in group">
               <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-teal-500 flex items-center justify-center mb-4 transform group-hover:scale-110 transition-transform duration-300" style={{clipPath: 'polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px))'}}>
-                <span className="text-white text-2xl">🌊</span>
+                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                </svg>
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">Environmental Education</h3>
               <p className="text-gray-600">Marine ecosystem awareness and conservation strategies</p>
@@ -141,7 +162,9 @@ export default function Program() {
 
             <div className="impact-card p-6 animate-expand-in group" style={{animationDelay: '0.1s'}}>
               <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-500 flex items-center justify-center mb-4 transform group-hover:scale-110 transition-transform duration-300" style={{clipPath: 'polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px))'}}>
-                <span className="text-white text-2xl">👥</span>
+                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                </svg>
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">Professional Development</h3>
               <p className="text-gray-600">Teacher empowerment and skill enhancement</p>
@@ -149,7 +172,9 @@ export default function Program() {
 
             <div className="impact-card p-6 animate-expand-in group" style={{animationDelay: '0.2s'}}>
               <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-indigo-500 flex items-center justify-center mb-4 transform group-hover:scale-110 transition-transform duration-300" style={{clipPath: 'polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px))'}}>
-                <span className="text-white text-2xl">🌍</span>
+                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">Cultural Integration</h3>
               <p className="text-gray-600">Indigenous knowledge and traditional practices</p>
@@ -157,7 +182,9 @@ export default function Program() {
 
             <div className="impact-card p-6 animate-expand-in group" style={{animationDelay: '0.3s'}}>
               <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-red-500 flex items-center justify-center mb-4 transform group-hover:scale-110 transition-transform duration-300" style={{clipPath: 'polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px))'}}>
-                <span className="text-white text-2xl">💻</span>
+                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 17V7m0 10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h2a2 2 0 012 2m0 10a2 2 0 002 2h2a2 2 0 002-2M9 7a2 2 0 012-2h2a2 2 0 012 2m0 10V7m0 10a2 2 0 002 2h2a2 2 0 002-2V7a2 2 0 00-2-2h-2a2 2 0 00-2 2" />
+                </svg>
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">Technology Innovation</h3>
               <p className="text-gray-600">Digital tools and modern learning platforms</p>
@@ -184,10 +211,10 @@ export default function Program() {
                     {speaker.image}
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-2xl font-bold text-white mb-2">{speaker.name}</h3>
+                    <h3 className="text-2xl font-bold text-gray-900 mb-2">{speaker.name}</h3>
                     <div className="text-yellow-400 font-semibold mb-3">{speaker.title}</div>
-                    <div className="text-white/90 font-medium mb-3">"{speaker.topic}"</div>
-                    <p className="text-white/80 leading-relaxed">{speaker.bio}</p>
+                    <div className="text-gray-600 font-medium mb-3">"{speaker.topic}"</div>
+                    <p className="text-gray-600/80 leading-relaxed">{speaker.bio}</p>
                   </div>
                 </div>
               </div>
@@ -211,7 +238,7 @@ export default function Program() {
             <div className="space-y-6">
               <div className="text-center mb-8">
                 <h3 className="text-3xl font-bold text-gray-900 mb-2">Day 1</h3>
-                <div className="text-xl text-blue-600 font-semibold">March 15, 2025</div>
+                <div className="text-xl text-blue-600 font-semibold">September 08, 2025</div>
               </div>
               
               <div className="space-y-4">
@@ -233,7 +260,7 @@ export default function Program() {
             <div className="space-y-6">
               <div className="text-center mb-8">
                 <h3 className="text-3xl font-bold text-gray-900 mb-2">Day 2</h3>
-                <div className="text-xl text-green-600 font-semibold">March 16, 2025</div>
+                <div className="text-xl text-green-600 font-semibold">September 09, 2025</div>
               </div>
               
               <div className="space-y-4">

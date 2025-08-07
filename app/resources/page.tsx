@@ -35,7 +35,11 @@ export default function Resources() {
       description: "Complete guide to establishing and running environmental clubs in primary schools",
       downloadUrl: "/toolkit/environmental-club-guide.pdf",
       category: "Toolkit",
-      icon: "🌱",
+      icon: (
+        <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+        </svg>
+      ),
       color: "from-green-400 to-emerald-400"
     },
     {
@@ -43,7 +47,11 @@ export default function Resources() {
       description: "Visual aids, worksheets, and activity plans for marine education",
       downloadUrl: "/toolkit/marine-teaching-materials.pdf",
       category: "Toolkit",
-      icon: "🌊",
+      icon: (
+        <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 10l-2 1m0 0l-2-1m2 1v2.5M20 7l-2 1m2-1l-2-1m2 1v2.5M14 4l-2-1-2 1M4 7l2-1M4 7l2 1M4 7v2.5M12 21l-2-1m2 1l2-1m-2 1v-2.5M6 18l-2-1v-2.5M18 18l2-1v-2.5" />
+        </svg>
+      ),
       color: "from-blue-400 to-teal-400"
     },
     {
@@ -51,7 +59,11 @@ export default function Resources() {
       description: "Practical strategies for Reduce, Reuse, Recycle in school settings",
       downloadUrl: "/toolkit/3rs-implementation.pdf",
       category: "Toolkit",
-      icon: "♻️",
+      icon: (
+        <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+        </svg>
+      ),
       color: "from-yellow-400 to-orange-400"
     },
     {
@@ -59,7 +71,11 @@ export default function Resources() {
       description: "Age-appropriate activities and experiments for climate education",
       downloadUrl: "/toolkit/climate-change-activities.pdf",
       category: "Toolkit",
-      icon: "🌍",
+      icon: (
+        <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+      ),
       color: "from-indigo-400 to-purple-400"
     },
     {
@@ -67,7 +83,11 @@ export default function Resources() {
       description: "Evaluation tools for environmental knowledge and skills assessment",
       downloadUrl: "/toolkit/assessment-rubrics.pdf",
       category: "Toolkit",
-      icon: "📊",
+      icon: (
+        <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+        </svg>
+      ),
       color: "from-red-400 to-pink-400"
     },
     {
@@ -75,7 +95,11 @@ export default function Resources() {
       description: "Methods to involve families in environmental education initiatives",
       downloadUrl: "/toolkit/parent-engagement.pdf",
       category: "Toolkit",
-      icon: "👨‍👩‍👧‍👦",
+      icon: (
+        <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+        </svg>
+      ),
       color: "from-cyan-400 to-blue-400"
     }
   ];
@@ -116,8 +140,11 @@ export default function Resources() {
         <div className="container mx-auto px-8 relative z-10">
           <div className="max-w-4xl">
             <div className="mb-8">
-              <span className="inline-block px-6 py-3 bg-white/20 backdrop-blur-sm text-white font-medium text-sm uppercase tracking-wider border-l-4 border-yellow-400">
-                📚 Knowledge Repository
+              <span className="inline-block px-6 py-3 bg-white/20 backdrop-blur-sm text-white font-medium text-sm uppercase tracking-wider border-l-4 border-yellow-400 flex items-center gap-2">
+                <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                </svg>
+                Knowledge Repository
               </span>
             </div>
             
@@ -134,12 +161,17 @@ export default function Resources() {
             
             <div className="flex flex-wrap gap-6">
               <div className="impact-card bg-white/10 backdrop-blur-md border-white/20 p-6 animate-expand-in">
-                <div className="text-2xl font-bold text-white mb-2">50+ Resources</div>
-                <div className="text-white/80">Research papers & toolkits</div>
+                <div className="text-2xl font-bold text-gray-900 mb-2">50+ Resources</div>
+                <div className="text-gray-700">Research papers & toolkits</div>
               </div>
               <div className="impact-card bg-white/10 backdrop-blur-md border-white/20 p-6 animate-expand-in" style={{animationDelay: '0.2s'}}>
-                <div className="text-2xl font-bold text-white mb-2">📊 Open Access</div>
-                <div className="text-white/80">Free educational materials</div>
+                <div className="text-2xl font-bold text-gray-900 mb-2 flex items-center gap-2">
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                  </svg>
+                  Open Access
+                </div>
+                <div className="text-gray-700">Free educational materials</div>
               </div>
             </div>
           </div>
@@ -164,7 +196,9 @@ export default function Resources() {
               <div key={index} className="impact-card bg-white p-8 animate-expand-in group" style={{animationDelay: `${index * 0.1}s`}}>
                 <div className="mb-6">
                   <div className={`w-16 h-16 bg-gradient-to-br ${paper.color} flex items-center justify-center mb-4 transform group-hover:scale-110 transition-transform duration-300`} style={{clipPath: 'polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px))'}}>
-                    <span className="text-white text-2xl">📄</span>
+                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                    </svg>
                   </div>
                   
                   <div className="mb-2">
@@ -216,13 +250,13 @@ export default function Resources() {
                 
                 <div className="mb-6">
                   <div className="mb-3">
-                    <span className="inline-block px-3 py-1 bg-white/20 backdrop-blur-sm text-white text-xs font-bold uppercase tracking-wide border-l-4 border-yellow-400">
+                    <span className="inline-block px-3 py-1 bg-white/20 backdrop-blur-sm text-gray-900 text-xs font-bold uppercase tracking-wide border-l-4 border-yellow-400">
                       {resource.category}
                     </span>
                   </div>
                   
-                  <h3 className="text-xl font-bold text-white mb-3 leading-tight">{resource.title}</h3>
-                  <p className="text-white/90 leading-relaxed">{resource.description}</p>
+                  <h3 className="text-xl font-bold text-gray-900 mb-3 leading-tight">{resource.title}</h3>
+                  <p className="text-gray-700 leading-relaxed">{resource.description}</p>
                 </div>
                 
                 <a
@@ -258,23 +292,25 @@ export default function Resources() {
             {slidesAndPresentations.map((slide, index) => (
               <div key={index} className="impact-card bg-white/10 backdrop-blur-md border-white/20 p-8 animate-expand-in group" style={{animationDelay: `${index * 0.2}s`}}>
                 <div className={`w-16 h-16 bg-gradient-to-br ${slide.color} flex items-center justify-center mb-6 transform group-hover:scale-110 transition-transform duration-300`} style={{clipPath: 'polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px))'}}>
-                  <span className="text-white text-2xl">📊</span>
+                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                  </svg>
                 </div>
                 
                 <div className="mb-6">
                   <div className="mb-3">
-                    <span className="inline-block px-3 py-1 bg-white/20 backdrop-blur-sm text-white text-xs font-bold uppercase tracking-wide border-l-4 border-yellow-400">
+                    <span className="inline-block px-3 py-1 bg-white/20 backdrop-blur-sm text-gray-900 text-xs font-bold uppercase tracking-wide border-l-4 border-yellow-400">
                       {slide.category}
                     </span>
                   </div>
                   
-                  <h3 className="text-xl font-bold text-white mb-3 leading-tight">{slide.title}</h3>
-                  <div className="text-yellow-400 font-semibold">By {slide.author}</div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-3 leading-tight">{slide.title}</h3>
+                  <div className="text-yellow-800 font-semibold">By {slide.author}</div>
                 </div>
                 
                 <a
                   href={slide.downloadUrl}
-                  className="inline-flex items-center text-yellow-400 hover:text-yellow-300 font-bold transition-colors group-hover:translate-x-2 transform transition-transform duration-300"
+                  className="inline-flex items-center text-yellow-800 hover:text-yellow-300 font-bold transition-colors group-hover:translate-x-2 transform transition-transform duration-300"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -303,7 +339,9 @@ export default function Resources() {
             
             <div className="impact-card bg-white p-12 animate-expand-in">
               <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-teal-500 mx-auto mb-8 flex items-center justify-center" style={{clipPath: 'polygon(0 0, calc(100% - 15px) 0, 100% 15px, 100% 100%, 15px 100%, 0 calc(100% - 15px))'}}>
-                <span className="text-white text-3xl">📤</span>
+                <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
+                </svg>
               </div>
               
               <h3 className="text-2xl font-bold text-gray-900 mb-4">Submit Your Materials</h3>
