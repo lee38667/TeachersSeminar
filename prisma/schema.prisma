@@ -11,7 +11,7 @@ datasource db {
 }
 
 model User {
-  id        String   @id @default(auto()) @map("_id") @test.ObjectId
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
   name      String
   email     String   @unique
   attended  Boolean?
@@ -20,7 +20,7 @@ model User {
 }
 
 model Seminar {
-  id        String   @id @default(auto()) @map("_id") @test.ObjectId
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
   title     String
   date      DateTime
   presenters User[]
@@ -28,20 +28,20 @@ model Seminar {
 }
 
 model Presentation {
-  id        String   @id @default(auto()) @map("_id") @test.ObjectId
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
   title     String
   abstract  String
   fileUrl   String?
   user      User?    @relation(fields: [userId], references: [id])
-  userId    String?
+  userId    String?  @db.ObjectId
   seminar   Seminar? @relation(fields: [seminarId], references: [id])
-  seminarId String?
+  seminarId String?  @db.ObjectId
 }
 
 model Feedback {
-  id        String   @id @default(auto()) @map("_id") @test.ObjectId
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
   rating    Int
   suggestion String?
   user      User?    @relation(fields: [userId], references: [id])
-  userId    String?
+  userId    String?  @db.ObjectId
 }
