@@ -1,0 +1,47 @@
+// Prisma schema for MongoDB
+// Adjust the datasource url in .env to your MongoDB connection string
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String   @id @default(auto()) @map("_id") @test.ObjectId
+  name      String
+  email     String   @unique
+  attended  Boolean?
+  presentations Presentation[]
+  feedbacks  Feedback[]
+}
+
+model Seminar {
+  id        String   @id @default(auto()) @map("_id") @test.ObjectId
+  title     String
+  date      DateTime
+  presenters User[]
+  presentations Presentation[]
+}
+
+model Presentation {
+  id        String   @id @default(auto()) @map("_id") @test.ObjectId
+  title     String
+  abstract  String
+  fileUrl   String?
+  user      User?    @relation(fields: [userId], references: [id])
+  userId    String?
+  seminar   Seminar? @relation(fields: [seminarId], references: [id])
+  seminarId String?
+}
+
+model Feedback {
+  id        String   @id @default(auto()) @map("_id") @test.ObjectId
+  rating    Int
+  suggestion String?
+  user      User?    @relation(fields: [userId], references: [id])
+  userId    String?
+}
