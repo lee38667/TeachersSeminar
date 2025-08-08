@@ -7,9 +7,10 @@ const JWT_SECRET = process.env.JWT_SECRET || 'your-secret-key';
 
 export async function PATCH(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
+    const { id } = await params;
     const token = request.headers.get('authorization')?.split(' ')[1];
     
     if (!token) {
@@ -26,7 +27,7 @@ export async function PATCH(
     }
 
     // Validate ObjectId format
-    if (!ObjectId.isValid(params.id)) {
+    if (!ObjectId.isValid(id)) {
       return NextResponse.json({ error: 'Invalid contact ID' }, { status: 400 });
     }
 
@@ -36,7 +37,7 @@ export async function PATCH(
     const result = await db
       .collection('contacts')
       .updateOne(
-        { _id: new ObjectId(params.id) },
+        { _id: new ObjectId(id) },
         { $set: { status, updatedAt: new Date() } }
       );
 
@@ -53,9 +54,10 @@ export async function PATCH(
 
 export async function DELETE(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
+    const { id } = await params;
     const token = request.headers.get('authorization')?.split(' ')[1];
     
     if (!token) {
@@ -66,7 +68,7 @@ export async function DELETE(
     jwt.verify(token, JWT_SECRET);
 
     // Validate ObjectId format
-    if (!ObjectId.isValid(params.id)) {
+    if (!ObjectId.isValid(id)) {
       return NextResponse.json({ error: 'Invalid contact ID' }, { status: 400 });
     }
 
@@ -75,7 +77,7 @@ export async function DELETE(
     // Delete contact
     const result = await db
       .collection('contacts')
-      .deleteOne({ _id: new ObjectId(params.id) });
+      .deleteOne({ _id: new ObjectId(id) });
 
     if (result.deletedCount === 0) {
       return NextResponse.json({ error: 'Contact not found' }, { status: 404 });
