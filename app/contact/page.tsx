@@ -14,15 +14,37 @@ const ContactSchema = Yup.object().shape({
 export default function Contact() {
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const handleSubmit = async (values: any, { setSubmitting, resetForm }: any) => {
-    // TODO: Implement form submission
-    console.log('Contact form submitted:', values);
-    setIsSubmitted(true);
-    resetForm();
-    setSubmitting(false);
-    
-    // Reset success message after 5 seconds
-    setTimeout(() => setIsSubmitted(false), 5000);
+  const handleSubmit = async (values: any, { setSubmitting, resetForm, setStatus }: any) => {
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(values),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setIsSubmitted(true);
+        resetForm();
+        setStatus({ type: 'success', message: data.message });
+        
+        // Reset success message after 5 seconds
+        setTimeout(() => {
+          setIsSubmitted(false);
+          setStatus(null);
+        }, 5000);
+      } else {
+        setStatus({ type: 'error', message: data.error || 'Failed to send message' });
+      }
+    } catch (error) {
+      console.error('Contact form error:', error);
+      setStatus({ type: 'error', message: 'Network error. Please try again.' });
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -232,8 +254,29 @@ export default function Contact() {
                   validationSchema={ContactSchema}
                   onSubmit={handleSubmit}
                 >
-                  {({ isSubmitting }) => (
+                  {({ isSubmitting, status }) => (
                     <Form className="space-y-8">
+                      {/* Status Messages */}
+                      {status && (
+                        <div className={`p-6 border-l-4 angular-card ${
+                          status.type === 'success' 
+                            ? 'bg-green-50 border-green-500 text-green-700' 
+                            : 'bg-red-50 border-red-500 text-red-700'
+                        }`}>
+                          <div className="flex items-center">
+                            <svg className={`w-6 h-6 mr-3 ${
+                              status.type === 'success' ? 'text-green-600' : 'text-red-600'
+                            }`} fill="currentColor" viewBox="0 0 20 20">
+                              {status.type === 'success' ? (
+                                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                              ) : (
+                                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" />
+                              )}
+                            </svg>
+                            {status.message}
+                          </div>
+                        </div>
+                      )}
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
                           <label className="block text-sm font-bold text-gray-900 mb-3 uppercase tracking-wider">

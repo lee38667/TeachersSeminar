@@ -44,21 +44,66 @@ export default function Register() {
     return {};
   };
 
-  const handleSubmit = async (values: any, { setSubmitting }: any) => {
+  const handleSubmit = async (values: any, { setSubmitting, setStatus }: any) => {
     try {
-      // TODO: Implement form submission to database
-      console.log('Form submitted:', values);
-      
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 2000));
-      
-      setIsSubmitted(true);
-      localStorage.removeItem('seminar-registration'); // Clear saved data on success
-      
-      // Show success message
-      alert('Registration submitted successfully! You will receive a confirmation email shortly.');
+      // Prepare form data for submission
+      const formData = {
+        firstName: values.name.split(' ')[0] || '',
+        lastName: values.name.split(' ').slice(1).join(' ') || '',
+        email: values.email,
+        phoneNumber: values.phoneNumber,
+        school: values.school,
+        region: values.region,
+        role: values.role,
+        participationType: values.participationType,
+        hasAttendedBefore: values.hasAttendedBefore === 'yes',
+        presentationTitle: values.presentationTitle || '',
+        presentationAbstract: values.presentationAbstract || '',
+        dietaryRequirements: values.dietaryRequirements || '',
+        accessibilityNeeds: values.accessibilityNeeds || '',
+        emergencyContact: values.emergencyContact || '',
+        expectations: values.expectations || '',
+        howDidYouHear: values.howDidYouHear || ''
+      };
+
+      const response = await fetch('/api/register', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setIsSubmitted(true);
+        localStorage.removeItem('seminar-registration'); // Clear saved data on success
+        
+        // Store confirmation details for display
+        localStorage.setItem('registration-confirmation', JSON.stringify({
+          confirmationCode: data.confirmationCode,
+          email: formData.email,
+          submittedAt: new Date().toISOString()
+        }));
+
+        setStatus({ 
+          type: 'success', 
+          message: data.message,
+          confirmationCode: data.confirmationCode 
+        });
+      } else {
+        setStatus({ 
+          type: 'error', 
+          message: data.error || 'Registration failed. Please try again.' 
+        });
+      }
     } catch (error) {
-      alert('Registration failed. Please try again.');
+      console.error('Registration error:', error);
+      setStatus({ 
+        type: 'error', 
+        message: 'Network error. Please check your connection and try again.' 
+      });
     } finally {
       setSubmitting(false);
     }
@@ -162,14 +207,46 @@ export default function Register() {
                 </div>
                 <h2 className="text-3xl font-bold text-gray-900 mb-4">Registration Complete!</h2>
                 <p className="text-xl text-gray-600 mb-8">
-                  Thank you for registering. You'll receive a confirmation email within 24 hours.
+                  Thank you for registering for the Teachers' Seminar. You'll receive a confirmation email within 24 hours.
                 </p>
-                <button 
-                  onClick={() => window.location.reload()} 
-                  className="cta-button bg-gradient-to-r from-blue-600 to-teal-600 hover:from-blue-700 hover:to-teal-700 text-white px-8 py-3 font-bold font-space"
-                >
-                  Register Another Person
-                </button>
+                
+                {(() => {
+                  try {
+                    const confirmation = JSON.parse(localStorage.getItem('registration-confirmation') || '{}');
+                    if (confirmation.confirmationCode) {
+                      return (
+                        <div className="bg-gray-50 border angular-form p-6 mb-8 max-w-md mx-auto">
+                          <h3 className="font-semibold text-gray-900 mb-3">Your Registration Details</h3>
+                          <div className="space-y-2 text-sm">
+                            <p><strong>Confirmation Code:</strong> <span className="font-mono text-blue-600">{confirmation.confirmationCode}</span></p>
+                            <p><strong>Email:</strong> {confirmation.email}</p>
+                            <p><strong>Submitted:</strong> {new Date(confirmation.submittedAt).toLocaleString()}</p>
+                          </div>
+                          <p className="text-xs text-gray-600 mt-4">
+                            Please save this confirmation code for your records.
+                          </p>
+                        </div>
+                      );
+                    }
+                  } catch (e) {
+                    return null;
+                  }
+                })()}
+                
+                <div className="space-x-4">
+                  <button 
+                    onClick={() => window.location.reload()} 
+                    className="cta-button bg-gradient-to-r from-blue-600 to-teal-600 hover:from-blue-700 hover:to-teal-700 text-white px-8 py-3 font-bold font-space"
+                  >
+                    Register Another Person
+                  </button>
+                  <button 
+                    onClick={() => window.location.href = '/'} 
+                    className="angular-button bg-gray-100 hover:bg-gray-200 text-gray-800 px-8 py-3 font-bold"
+                  >
+                    Return to Home
+                  </button>
+                </div>
               </div>
             ) : (
             <Formik
@@ -208,8 +285,41 @@ export default function Register() {
                 }
               }}
             >
-              {({ values, setFieldValue, isSubmitting }) => (
+              {({ values, setFieldValue, isSubmitting, status }) => (
                 <Form className="space-y-8">
+                  {/* Status Messages */}
+                  {status && (
+                    <div className={`p-6 border-l-4 angular-card ${
+                      status.type === 'success' 
+                        ? 'bg-green-50 border-green-500 text-green-700' 
+                        : 'bg-red-50 border-red-500 text-red-700'
+                    }`}>
+                      <div className="flex items-start">
+                        <svg className={`w-6 h-6 mr-3 flex-shrink-0 mt-0.5 ${
+                          status.type === 'success' ? 'text-green-600' : 'text-red-600'
+                        }`} fill="currentColor" viewBox="0 0 20 20">
+                          {status.type === 'success' ? (
+                            <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                          ) : (
+                            <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" />
+                          )}
+                        </svg>
+                        <div>
+                          <p className="font-semibold">{status.message}</p>
+                          {status.confirmationCode && (
+                            <p className="mt-2 font-mono text-sm bg-white p-2 rounded border">
+                              <strong>Confirmation Code:</strong> {status.confirmationCode}
+                            </p>
+                          )}
+                          {status.type === 'success' && (
+                            <p className="mt-2 text-sm">
+                              Please save your confirmation code for future reference. You will also receive an email confirmation shortly.
+                            </p>
+                          )}
+                        </div>
+                      </div>
+                    </div>
+                  )}
                   {/* Progress Indicator */}
                   <div className="mb-8">
                     <div className="flex items-center justify-between mb-2">

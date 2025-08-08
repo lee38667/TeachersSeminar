@@ -1,16 +1,30 @@
 'use client';
 
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isRegisterDropdownOpen, setIsRegisterDropdownOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setIsRegisterDropdownOpen(false);
+      }
+    }
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
 
   const navigation = [
     { name: 'Home', href: '/' },
     { name: 'About', href: '/about' },
     { name: 'Program', href: '/program' },
-    { name: 'Register', href: '/register' },
     { name: 'Resources', href: '/resources' },
     { name: 'Blog', href: '/blog' },
     { name: 'Contact', href: '/contact' },
@@ -44,6 +58,42 @@ export default function Navigation() {
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-600 to-green-600 group-hover:w-full transition-all duration-300"></span>
               </Link>
             ))}
+            
+            {/* Registration Dropdown */}
+            <div className="relative" ref={dropdownRef}>
+              <button
+                onClick={() => setIsRegisterDropdownOpen(!isRegisterDropdownOpen)}
+                className="relative px-4 py-2 text-gray-700 hover:text-blue-600 font-medium text-sm uppercase tracking-wider transition-all duration-300 group flex items-center"
+              >
+                Register
+                <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-600 to-green-600 group-hover:w-full transition-all duration-300"></span>
+              </button>
+              
+              {isRegisterDropdownOpen && (
+                <div className="absolute top-full left-0 mt-1 w-56 bg-white shadow-xl border angular-form z-50">
+                  <Link
+                    href="/register"
+                    className="block px-4 py-3 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors"
+                    onClick={() => setIsRegisterDropdownOpen(false)}
+                  >
+                    <div className="font-semibold">New Registration</div>
+                    <div className="text-xs text-gray-500">Register for the seminar</div>
+                  </Link>
+                  <Link
+                    href="/registration-lookup"
+                    className="block px-4 py-3 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 border-t transition-colors"
+                    onClick={() => setIsRegisterDropdownOpen(false)}
+                  >
+                    <div className="font-semibold">Check Registration</div>
+                    <div className="text-xs text-gray-500">Lookup your registration status</div>
+                  </Link>
+                </div>
+              )}
+            </div>
+            
             <Link
               href="/register"
               className="ml-6 cta-primary text-sm py-3 px-6"
@@ -89,6 +139,13 @@ export default function Navigation() {
                 onClick={() => setIsMenuOpen(false)}
               >
                 Register Now
+              </Link>
+              <Link
+                href="/registration-lookup"
+                className="text-gray-700 hover:text-blue-600 block px-3 py-2 text-base font-medium border-t"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Check Registration
               </Link>
             </div>
           </div>
