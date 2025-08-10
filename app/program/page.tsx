@@ -163,7 +163,7 @@ export default function Program() {
           <div className="text-center mb-16">
             <h2 className="section-title text-white mb-6">Speakers / Presenters</h2>
             <p className="text-xl text-white/90 max-w-3xl mx-auto">
-              Visionary experts driving the future of environmental education across Africa.
+              Visionary experts driving the future of environmental education across Namibia.
             </p>
           </div>
           
