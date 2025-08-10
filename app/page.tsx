@@ -122,147 +122,124 @@ export default function Home() {
             </div>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 max-w-9xl mx-auto">
               <div className="partner-hex animate-float">
-                <div className="text-center">
-                  <div className="w-16 h-16 mx-auto mb-3 flex items-center justify-center">
-                    <Image 
-                      src="/UNESCO_logo.svg.png" 
-                      alt="UNESCO Logo" 
-                      width={64} 
-                      height={64}
-                      className="object-contain filter hover:scale-110 transition-transform duration-300"
-                    />
-                  </div>
-                  <div className="font-bold text-blue-600 text-lg">UNESCO</div>
-                  <div className="text-xs text-gray-500">Global Education</div>
-                </div>
+              <div className="w-16 h-16 mx-auto flex items-center justify-center">
+                <Image 
+                src="/UNESCO_logo.svg.png" 
+                alt="UNESCO Logo" 
+                width={64} 
+                height={64}
+                className="object-contain filter hover:scale-110 transition-transform duration-300"
+                />
+              </div>
               </div>
               
               <div className="partner-hex animate-float" style={{animationDelay: '0.5s'}}>
-                <div className="text-center">
-                  <div className="w-16 h-16 mx-auto mb-3 flex items-center justify-center">
-                    <Image 
-                      src="/Unam Logo.png" 
-                      alt="UNAM Logo" 
-                      width={64} 
-                      height={64}
-                      className="object-contain filter hover:scale-110 transition-transform duration-300"
-                    />
-                  </div>
-                 
-                  <div className="text-xs text-gray-500">Research Excellence</div>
-                </div>
+              <div className="w-16 h-16 mx-auto flex items-center justify-center">
+                <Image 
+                src="/Unam Logo.png" 
+                alt="UNAM Logo" 
+                width={64} 
+                height={64}
+                className="object-contain filter hover:scale-110 transition-transform duration-300"
+                />
+              </div>
               </div>
               
               <div className="partner-hex animate-float" style={{animationDelay: '1s'}}>
-                <div className="text-center">
-                  <div className="w-16 h-16 mx-auto mb-3 flex items-center justify-center">
-                    <Image 
-                      src="/VrpsLogo.png" 
-                      alt="Van Rhyn Primary School Logo" 
-                      width={64} 
-                      height={64}
-                      className="object-contain filter hover:scale-110 transition-transform duration-300"
-                    />
-                  </div>
-                  <div className="font-bold text-teal-600 text-lg">Van Rhyn</div>
-                  <div className="text-xs text-gray-500">Initiative Sponsor</div>
-                </div>
+              <div className="w-16 h-16 mx-auto flex items-center justify-center">
+                <Image 
+                src="/VrpsLogo.png" 
+                alt="Van Rhyn Primary School Logo" 
+                width={64} 
+                height={64}
+                className="object-contain filter hover:scale-110 transition-transform duration-300"
+                />
+              </div>
               </div>
               
               <div className="partner-hex animate-float" style={{animationDelay: '1.5s'}}>
-                <div className="text-center">
-                  <div className="w-16 h-16 mx-auto mb-3 flex items-center justify-center">
-                    <Image 
-                      src="/Ministry logo mobile_0.jpg" 
-                      alt="Ministry of Education Logo" 
-                      width={64} 
-                      height={64}
-                      className="object-contain filter hover:scale-110 transition-transform duration-300"
-                    />
-                  </div>
-                  <div className="font-bold text-red-600 text-lg">MoEAC</div>
-                  <div className="text-xs text-gray-500">Policy Leadership</div>
-                </div>
+              <div className="w-16 h-16 mx-auto flex items-center justify-center">
+                <Image 
+                src="/MOELOGO.jpeg" 
+                alt="Ministry of Education Logo" 
+                width={64} 
+                height={64}
+                className="object-contain filter hover:scale-110 transition-transform duration-300"
+                />
+              </div>
               </div>
 
-              <div className="partner-hex animate-float" style={{animationDelay: '2s'}}>
-                <div className="text-center">
-                  <div className="w-16 h-16 mx-auto mb-3 flex items-center justify-center">
+                <div className="partner-rect animate-float flex items-center justify-center" style={{animationDelay: '2s'}}>
+                  <div className="w-36 h-16 flex items-center justify-center bg-white rounded-md shadow-md overflow-hidden border border-gray-200 mx-auto">
                     <Image 
                       src="/EIFLogo.png" 
                       alt="Environmental Investment Fund Logo" 
-                      width={64} 
+                      width={134} 
                       height={64}
                       className="object-contain filter hover:scale-110 transition-transform duration-300"
                     />
                   </div>
-                  <div className="font-bold text-green-600 text-lg">EIF</div>
-                  <div className="text-xs text-gray-500">Sustainability Funding</div>
                 </div>
-              </div>
 
-              <div className="partner-hex animate-float" style={{animationDelay: '2.5s'}}>
-                <div className="text-center">
-                  <div className="w-16 h-16 mx-auto mb-3 flex items-center justify-center">
+                <div className="partner-square animate-float flex items-center justify-center flex-col" style={{animationDelay: '2.5s'}}>
+                  <div className="w-25 h-25 flex items-center justify-center  rounded-md shadow-md overflow-hidden mx-auto">
                     <Image 
-                      src="/MEFTLogo.png" 
-                      alt="Ministry of Environment, Forestry and Tourism Logo" 
-                      width={64} 
-                      height={64}
+                      src="/MinistryOfEnviroLogo.jpeg" 
+                      alt="Ministry of Environment, Forestry and Tourism" 
+                      width={84} 
+                      height={84}
                       className="object-contain filter hover:scale-110 transition-transform duration-300"
                     />
                   </div>
-                  <div className="font-bold text-emerald-600 text-lg">MEFT</div>
-                  <div className="text-xs text-gray-500">Environmental Stewardship</div>
+                  <p className="text-s text-gray-700 mt-2 text-center">Ministry of Environment, Forestry and Tourism</p>
                 </div>
-              </div>
 
-              <div className="partner-hex animate-float" style={{animationDelay: '3s'}}>
-                <div className="text-center">
-                  <div className="w-16 h-16 mx-auto mb-3 flex items-center justify-center">
-                    <Image 
-                      src="/BotanicalGarden.png" 
-                      alt="National Botanical Garden Logo" 
-                      width={64} 
-                      height={64}
-                      className="object-contain filter hover:scale-110 transition-transform duration-300"
-                    />
-                  </div>
-                  <div className="font-bold text-teal-600 text-lg">Botanical</div>
-                  <div className="text-xs text-gray-500">Biodiversity Support</div>
-                </div>
+              <div className="partner-square animate-float flex items-center justify-center flex-col" style={{animationDelay: '3s'}}>
+              <div className="w-25 h-25 flex items-center justify-center  rounded-md shadow-md overflow-hidden mx-auto">
+                <Image 
+                src="/NBGLogo.jpeg" 
+                alt="National Botanical Garden Logo" 
+                width={104} 
+                height={104}
+                className="object-contain filter hover:scale-110 transition-transform duration-300"
+                />
+              </div>
+              <p className="text-s text-gray-700 mt-2 text-center">National Botanical Garden</p>
               </div>
 
               <div className="partner-hex animate-float" style={{animationDelay: '3.5s'}}>
-                <div className="text-center">
-                  <div className="w-16 h-16 mx-auto mb-3 flex items-center justify-center">
-                    <Image 
-                      src="/MindsInAction.png" 
-                      alt="Minds in Action Logo" 
-                      width={64} 
-                      height={64}
-                      className="object-contain filter hover:scale-110 transition-transform duration-300"
-                    />
-                  </div>
-                  <div className="font-bold text-indigo-600 text-lg">Minds</div>
-                  <div className="text-xs text-gray-500">STEM Engagement</div>
-                </div>
+              <div className="w-66 h-66 mx-auto flex items-center justify-center">
+                <Image 
+                src="/MindsInActionLogo.jpeg" 
+                alt="Minds in Action Logo" 
+                width={344} 
+                height={344}
+                className="object-contain filter hover:scale-110 transition-transform duration-300"
+                />
+              </div>
               </div>
 
               <div className="partner-hex animate-float" style={{animationDelay: '4s'}}>
-                <div className="text-center">
-                  <div className="w-16 h-16 mx-auto mb-3 flex items-center justify-center">
-                    <Image 
-                      src="/NNFLogo.png" 
-                      alt="Namibia Nature Foundation Logo" 
-                      width={64} 
-                      height={64}
-                      className="object-contain filter hover:scale-110 transition-transform duration-300"
-                    />
-                  </div>
-                  <div className="font-bold text-green-700 text-lg">NNF</div>
-                  <div className="text-xs text-gray-500">Conservation Partner</div>
-                </div>
+              <div className="w-46 h-46 mx-auto flex items-center justify-center">
+                <Image 
+                src="/nnf-logo.png" 
+                alt="Namibia Nature Foundation Logo" 
+                width={124} 
+                height={124}
+                className="object-contain filter hover:scale-110 transition-transform duration-300"
+                />
+              </div>
+              </div>
+               <div className="partner-circle animate-float" style={{animationDelay: '4s'}}>
+              <div className="w-46 h-46 mx-auto flex items-center justify-center">
+                <Image 
+                src="/IUMLogo.jpeg" 
+                alt="International University of Management Logo" 
+                width={124} 
+                height={124}
+                className="object-contain filter hover:scale-110 transition-transform duration-300"
+                />
+              </div>
               </div>
             </div>
           </div>

@@ -169,7 +169,7 @@ export default function Gallery() {
             </h1>
             
             <p className="text-xl text-white/90 max-w-3xl leading-relaxed mb-12">
-              Explore our journey from the founding moments in Vienna to the thriving educational initiatives 
+              Explore our journey from the founding moments in Vienna and Cape Town to the thriving educational initiatives 
               and seminars that continue to transform Namibian education.
             </p>
             

@@ -37,7 +37,7 @@ export default function Footer() {
 
           {/* Partners */}
           <div>
-            <h3 className="font-semibold text-lg mb-4">Partners</h3>
+            <h3 className="font-semibold text-lg mb-4">Collaborators</h3>
             <ul className="space-y-2 text-gray-300">
               <li>UNESCO</li>
               <li>UNAM</li>
@@ -47,7 +47,7 @@ export default function Footer() {
               <li>EIF</li>
               <li>MEFT</li>
               <li>Botanical Garden</li>
-              <li>Minds in Action</li>
+              <li>MindsInAction</li>
               <li>NNF</li>
             </ul>
           </div>

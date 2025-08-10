@@ -102,7 +102,7 @@ export default function Program() {
           <div className="text-center mb-16">
             <h2 className="section-title text-gray-900 mb-4">Learning Strands</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Four strategic focus areas driving educational transformation.
+              Five strategic focus areas driving educational transformation.
             </p>
           </div>
           
