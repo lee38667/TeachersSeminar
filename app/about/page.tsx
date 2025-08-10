@@ -77,14 +77,13 @@ export default function About() {
                 <h3 className="text-2xl font-bold text-gray-900 mb-4">Educational Excellence</h3>
               </div>
               <p className="text-gray-700 text-lg leading-relaxed mb-6">
-                The KEIDF seminar was established to revolutionize environmental education across Namibia. 
+                The KEIDF seminar was established to revolutionize environmental education across the Khomas Region. 
                 We create platforms where educators transcend traditional boundaries, sharing cutting-edge 
                 knowledge and innovative methodologies.
               </p>
-              <p className="text-gray-700 leading-relaxed">
-                Our focus on environmental education recognizes Namibia's diverse ecological heritage and 
-                the critical importance of sustainability for future generations.
-              </p>
+                <p className="text-gray-700 leading-relaxed">
+                Our focus is on capacity building and empowering educators with diverse, innovative teaching methodologies, enabling them to adapt and excel in delivering impactful and meaningful education.
+                </p>
             </div>
 
             <div className="impact-card p-8 animate-expand-in" style={{animationDelay: '0.3s'}}>
@@ -98,13 +97,12 @@ export default function About() {
               </div>
               <p className="text-gray-700 text-lg leading-relaxed mb-6">
                 We bridge the crucial gap between advanced scientific research and practical classroom 
-                application, making complex environmental concepts accessible and engaging for primary 
-                school students.
+                application, making complex teaching concepts accessible and engaging for primary 
+                school learners.
               </p>
-              <p className="text-gray-700 leading-relaxed">
-                Through evidence-based teaching strategies, we empower educators to inspire the next 
-                generation of environmental stewards and ocean conservationists.
-              </p>
+                <p className="text-gray-700 leading-relaxed">
+                By using fun, hands-on activities and real-world examples, we help teachers make complex topics exciting and easy to understand for primary school learners. Our goal is to inspire curiosity and care for the environment in every child, building a foundation for lifelong stewardship of our planet.
+                </p>
             </div>
           </div>
         </div>

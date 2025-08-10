@@ -198,15 +198,10 @@ export default function RegistrationLookup() {
                     
                     <div>
                       <strong className="text-gray-900">Payment Status:</strong>
-                      <span className={`inline-flex px-2 py-1 text-xs font-semibold rounded-full ${
-                        registration.paymentStatus === 'paid' ? 'bg-green-100 text-green-800' :
-                        registration.paymentStatus === 'pending' ? 'bg-yellow-100 text-yellow-800' :
-                        'bg-red-100 text-red-800'
-                      }`}>
-                        {registration.paymentStatus}
+                      <span className="inline-flex px-2 py-1 text-xs font-semibold rounded-full bg-blue-100 text-blue-800">
+                      School to pay (For Participation)
                       </span>
                     </div>
-                    
                     <div>
                       <strong className="text-gray-900">Confirmation Code:</strong>
                       <p className="font-mono text-blue-600">{registration.confirmationCode}</p>

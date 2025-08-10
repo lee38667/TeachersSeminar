@@ -16,11 +16,10 @@ export default function Gallery() {
     '/Images/V (5).jpg',
     '/Images/V (6).jpg',
     '/Images/V (7).jpg',
+    '/Images/V (8).jpg',
     '/Images/V1.jpg',
     '/Images/V2.jpg',
-    '/Images/V3.jpg',
-    '/Images/V4.jpg',
-    '/Images/V5.jpg'
+    '/Images/V4.jpg'
   ];
 
   // Teacher Seminar pictures (Initiatives and Previous Seminars)
@@ -53,7 +52,6 @@ export default function Gallery() {
     '/Images/TS (26).jpg',
     '/Images/TS1.jpg',
     '/Images/TS2.jpg',
-    '/Images/TS3.jpg',
     '/Images/TS3 (2).jpg',
     '/Images/TS4.jpg',
     '/Images/TS5.jpg',

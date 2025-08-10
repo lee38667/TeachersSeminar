@@ -277,17 +277,17 @@ export default function Home() {
           
           <div className="container mx-auto px-8 relative z-10">
             <div className="text-center mb-16">
-              <h2 className="section-title text-white mb-6">Live Impact Dashboard</h2>
+              <h2 className="section-title text-white mb-6">Impact Dashboard</h2>
               <p className="text-xl text-white/90 max-w-3xl mx-auto">
-                Real-time registration data showcasing the growing momentum of educational transformation.
+                Registration data showcasing the growing momentum of educational transformation.
               </p>
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
               <div className="impact-card bg-white/10 backdrop-blur-md border-white/20 text-center animate-pulse-glow">
                 <div className="text-6xl font-black text-gray-900 mb-4 animate-float">47</div>
-                <h3 className="text-2xl font-semibold text-gray-900 mb-2">Active Registrations</h3>
-                <p className="text-gray-800/80">Educators across 14 regions committed to change</p>
+                <h3 className="text-2xl font-semibold text-gray-900 mb-2">Registrations</h3>
+                <p className="text-gray-800/80">Educators across Windhoek committed to change</p>
               </div>
               
               <div className="impact-card bg-white/10 backdrop-blur-md border-white/20 text-center animate-pulse-glow" style={{animationDelay: '1.5s'}}>
