@@ -57,13 +57,13 @@ export default function Home() {
               <div className="impact-card text-center animate-expand-in group">
                 <div className="stat-number mb-4 group-hover:scale-110 transition-transform duration-300">218+</div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-2">Educators Reached</h3>
-                <p className="text-gray-600">Across 14 regions, spreading innovative teaching methods</p>
+                <p className="text-gray-600"></p>
               </div>
               
               <div className="impact-card text-center animate-expand-in group" style={{animationDelay: '0.2s'}}>
                 <div className="stat-number mb-4 group-hover:scale-110 transition-transform duration-300">35+</div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-2">Schools Transformed</h3>
-                <p className="text-gray-600">Implementing environmental education curricula</p>
+                <p className="text-gray-600">Innovative methodologies prepared for sharing</p>
               </div>
               
               <div className="impact-card text-center animate-expand-in group" style={{animationDelay: '0.4s'}}>
