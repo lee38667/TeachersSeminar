@@ -30,6 +30,7 @@ export default function Footer() {
               <li><Link href="/program" className="text-gray-300 hover:text-white transition-colors">Program</Link></li>
               <li><Link href="/register" className="text-gray-300 hover:text-white transition-colors">Register</Link></li>
               <li><Link href="/resources" className="text-gray-300 hover:text-white transition-colors">Resources</Link></li>
+              <li><Link href="/gallery" className="text-gray-300 hover:text-white transition-colors">Gallery</Link></li>
               <li><Link href="/contact" className="text-gray-300 hover:text-white transition-colors">Contact</Link></li>
             </ul>
           </div>
@@ -54,7 +55,7 @@ export default function Footer() {
 
         <div className="border-t border-gray-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-400 text-sm">
-            © 2025 Khomas Education Information Development Forum. All rights reserved.
+            © 2025 Khomas Educators Innovation Development Forum. All rights reserved.
           </p>
           <div className="flex space-x-4 mt-4 md:mt-0">
             <span className="text-gray-400 text-sm">SDG Goals: 4, 13, 17</span>

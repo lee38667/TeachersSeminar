@@ -15,36 +15,21 @@ export default function Blog() {
       ),
       color: "from-blue-500 to-teal-500"
     },
-    {
-      id: 2,
-      title: "Indigenous Knowledge Meets Modern Science: A Teacher's Journey",
-  excerpt: "How Ms. Nashilongo successfully integrated indigenous Namibian knowledge into her environmental science curriculum.",
-      author: "Sarah Nashilongo",
-      date: "November 28, 2024",
-      category: "Teacher Stories",
-      readTime: "7 min read",
-      image: (
-        <svg className="w-16 h-16 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-        </svg>
-      ),
-      color: "from-green-500 to-emerald-500"
-    },
-    {
-      id: 3,
-      title: "Building Effective Environmental Clubs in Primary Schools",
-      excerpt: "A step-by-step guide to establishing and maintaining active environmental clubs that engage students and communities.",
-      author: "Johannes Shikongo",
-      date: "November 15, 2024",
-      category: "Best Practices",
-      readTime: "6 min read",
-      image: (
-        <svg className="w-16 h-16 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
-        </svg>
-      ),
-      color: "from-purple-500 to-indigo-500"
-    },
+    // {
+    //   id: 3,
+    //   title: "Building Effective Environmental Clubs in Primary Schools",
+    //   excerpt: "A step-by-step guide to establishing and maintaining active environmental clubs that engage students and communities.",
+    //   author: "Johannes Shikongo",
+    //   date: "November 15, 2024",
+    //   category: "Best Practices",
+    //   readTime: "6 min read",
+    //   image: (
+    //     <svg className="w-16 h-16 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    //       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+    //     </svg>
+    //   ),
+    //   color: "from-purple-500 to-indigo-500"
+    // },
     {
       id: 4,
       title: "KEIDF 2025 Call for Presentations Now Open",
@@ -55,38 +40,41 @@ export default function Blog() {
       readTime: "3 min read",
       image: "📢",
       color: "from-red-500 to-pink-500"
-    },
-    {
-      id: 5,
-  title: "Digital Tools for Environmental Education: What's Working in Namibian Classrooms",
-      excerpt: "Practical review of educational technology tools that are making a difference in environmental education across the country.",
-      author: "Dr. Sarah Katjavivi",
-      date: "October 20, 2024",
-      category: "Technology",
-      readTime: "8 min read",
-      image: (
-        <svg className="w-16 h-16 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-        </svg>
-      ),
-      color: "from-orange-500 to-red-500"
-    },
-    {
-      id: 6,
-      title: "Community Impact: How Teacher Training Reaches Beyond the Classroom",
-      excerpt: "Research findings on the ripple effects of professional development programs in environmental education.",
-      author: "Dr. Maria Nghipangelwa",
-      date: "October 5, 2024",
-      category: "Research",
-      readTime: "10 min read",
-      image: (
-        <svg className="w-16 h-16 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-        </svg>
-      ),
-      color: "from-cyan-500 to-blue-500"
     }
   ];
+
+    // Uncomment and add more posts as needed
+  //   {
+  //     id: 5,
+  // title: "Digital Tools for Environmental Education: What's Working in Namibian Classrooms",
+  //     excerpt: "Practical review of educational technology tools that are making a difference in environmental education across the country.",
+  //     author: "Dr. Sarah Katjavivi",
+  //     date: "October 20, 2024",
+  //     category: "Technology",
+  //     readTime: "8 min read",
+  //     image: (
+  //       <svg className="w-16 h-16 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+  //         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+  //       </svg>
+  //     ),
+  //     color: "from-orange-500 to-red-500"
+  //   },
+  //   {
+  //     id: 6,
+  //     title: "Community Impact: How Teacher Training Reaches Beyond the Classroom",
+  //     excerpt: "Research findings on the ripple effects of professional development programs in environmental education.",
+  //     author: "Dr. Maria Nghipangelwa",
+  //     date: "October 5, 2024",
+  //     category: "Research",
+  //     readTime: "10 min read",
+  //     image: (
+  //       <svg className="w-16 h-16 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+  //         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+  //       </svg>
+  //     ),
+  //     color: "from-cyan-500 to-blue-500"
+  //   }
+  // ];
 
   const categories = ["All", "Event Highlights", "Teacher Stories", "Best Practices", "Announcements", "Technology", "Research"];
 
