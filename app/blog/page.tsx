@@ -18,7 +18,7 @@ export default function Blog() {
     {
       id: 2,
       title: "Indigenous Knowledge Meets Modern Science: A Teacher's Journey",
-      excerpt: "How Ms. Nashilongo successfully integrated traditional Namibian coastal knowledge into her marine science curriculum.",
+  excerpt: "How Ms. Nashilongo successfully integrated indigenous Namibian knowledge into her environmental science curriculum.",
       author: "Sarah Nashilongo",
       date: "November 28, 2024",
       category: "Teacher Stories",
@@ -58,7 +58,7 @@ export default function Blog() {
     },
     {
       id: 5,
-      title: "Digital Tools for Marine Education: What's Working in Namibian Classrooms",
+  title: "Digital Tools for Environmental Education: What's Working in Namibian Classrooms",
       excerpt: "Practical review of educational technology tools that are making a difference in environmental education across the country.",
       author: "Dr. Sarah Katjavivi",
       date: "October 20, 2024",

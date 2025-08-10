@@ -1,130 +1,114 @@
 export default function Resources() {
   const presentationPapers = [
     {
-      title: "Teacher-led Professional Development: A Model for Addressing Learning Poverty in Namibia",
-      author: "Leena M. Iileka",
-      year: "2024",
-      description: "Research on empowering teachers through collaborative professional development models",
-      downloadUrl: "/papers/leena-iileka-presentation.pdf",
-      category: "Research Papers",
-      color: "from-blue-500 to-teal-500"
-    },
-    {
-      title: "Marine Conservation Education in Primary Schools",
-      author: "Dr. Maria Nghipangelwa",
-      year: "2024",
-      description: "Strategies for integrating marine ecosystem education into primary curriculum",
-      downloadUrl: "/papers/marine-conservation-education.pdf",
-      category: "Research Papers",
-      color: "from-green-500 to-emerald-500"
-    },
-    {
-      title: "Indigenous Knowledge Systems in Environmental Education",
-      author: "Prof. Johannes Nakale",
+      title: "Geosciences Information for Teachers",
+      author: "Cape Town Workshop",
       year: "2023",
-      description: "Bridging traditional knowledge and modern environmental science education",
-      downloadUrl: "/papers/indigenous-knowledge-systems.pdf",
-      category: "Research Papers",
-      color: "from-purple-500 to-indigo-500"
+      description: "Comprehensive guide to integrating geoscience concepts into primary education",
+      downloadUrl: "/Geosciences_Information_for_Teachers_CT[1].pdf",
+      category: "Teaching Guides",
+      color: "from-emerald-500 to-green-500"
+    },
+    {
+      title: "UNESCO Newsletter Issue 14",
+      author: "UNESCO Windhoek",
+      year: "2024",
+      description: "Latest updates on educational initiatives and global partnerships in Namibia",
+      downloadUrl: "/UNESCO Windhoek Newsletter-Issue 14.pdf",
+      category: "Policy Documents",
+      color: "from-blue-700 to-indigo-600"
     }
   ];
 
   const toolkitResources = [
-    {
-      title: "Environmental Club Starter Guide",
-      description: "Complete guide to establishing and running environmental clubs in primary schools",
-      downloadUrl: "/toolkit/environmental-club-guide.pdf",
-      category: "Toolkit",
-      icon: (
-        <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
-        </svg>
-      ),
-      color: "from-green-400 to-emerald-400"
-    },
-    {
-      title: "Marine Ecosystem Teaching Materials",
-      description: "Visual aids, worksheets, and activity plans for marine education",
-      downloadUrl: "/toolkit/marine-teaching-materials.pdf",
-      category: "Toolkit",
-      icon: (
-        <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 10l-2 1m0 0l-2-1m2 1v2.5M20 7l-2 1m2-1l-2-1m2 1v2.5M14 4l-2-1-2 1M4 7l2-1M4 7l2 1M4 7v2.5M12 21l-2-1m2 1l2-1m-2 1v-2.5M6 18l-2-1v-2.5M18 18l2-1v-2.5" />
-        </svg>
-      ),
-      color: "from-blue-400 to-teal-400"
-    },
-    {
-      title: "3Rs Classroom Implementation",
-      description: "Practical strategies for Reduce, Reuse, Recycle in school settings",
-      downloadUrl: "/toolkit/3rs-implementation.pdf",
-      category: "Toolkit",
-      icon: (
-        <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
-        </svg>
-      ),
-      color: "from-yellow-400 to-orange-400"
-    },
-    {
-      title: "Climate Change Education Activities",
-      description: "Age-appropriate activities and experiments for climate education",
-      downloadUrl: "/toolkit/climate-change-activities.pdf",
-      category: "Toolkit",
-      icon: (
-        <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-        </svg>
-      ),
-      color: "from-indigo-400 to-purple-400"
-    },
-    {
-      title: "Assessment Rubrics for Environmental Education",
-      description: "Evaluation tools for environmental knowledge and skills assessment",
-      downloadUrl: "/toolkit/assessment-rubrics.pdf",
-      category: "Toolkit",
-      icon: (
-        <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-        </svg>
-      ),
-      color: "from-red-400 to-pink-400"
-    },
-    {
-      title: "Parent Engagement Strategies",
-      description: "Methods to involve families in environmental education initiatives",
-      downloadUrl: "/toolkit/parent-engagement.pdf",
-      category: "Toolkit",
-      icon: (
-        <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-        </svg>
-      ),
-      color: "from-cyan-400 to-blue-400"
-    }
+    // Removing all toolkit resources as they don't exist in public folder
+    // These were placeholder/fictional resources
   ];
 
   const slidesAndPresentations = [
     {
-      title: "Namibian Coastal Ecosystems - 2024 Presentation",
-      author: "Dr. Maria Nghipangelwa",
-      downloadUrl: "/slides/coastal-ecosystems-2024.pptx",
-      category: "Slides",
-      color: "from-teal-500 to-blue-500"
+      title: "The Solar System and Beyond - GIFT 2016",
+      author: "GIFT Program",
+      downloadUrl: "/gift_2016_the_solar_system_and_beyond.pdf",
+      category: "Science Education",
+      color: "from-indigo-500 to-purple-500"
     },
     {
-      title: "Digital Tools for Environmental Education",
-      author: "Dr. Sarah Katjavivi",
-      downloadUrl: "/slides/digital-tools-2024.pptx",
-      category: "Slides",
+      title: "Role of Physics Education for Technological Development",
+      author: "Prof. Onjefu",
+      downloadUrl: "/Role of Physics Education for Technological Development Prof. Onjefu.pptx",
+      category: "Physics Education",
+      color: "from-blue-500 to-teal-500"
+    },
+    {
+      title: "Geoscience Workshop Cape Town",
+      author: "Geoscience Education",
+      downloadUrl: "/GEOSCIENCE     WORKSHOP CT presentation.pps",
+      category: "Geoscience",
+      color: "from-green-500 to-emerald-500"
+    },
+    {
+      title: "Geoscience Workshop Presentation",
+      author: "Workshop Facilitators",
+      downloadUrl: "/Geoscience Workshop.ppt",
+      category: "Geoscience",
+      color: "from-emerald-500 to-green-500"
+    },
+    {
+      title: "Project Based Teaching 2022 - MV Hitila",
+      author: "MV Hitila",
+      downloadUrl: "/MV Hitila Presentation Project Based Teaching 2022.pptx",
+      category: "Teaching Methods",
+      color: "from-orange-500 to-red-500"
+    },
+    {
+      title: "Teacher's Workshop",
+      author: "Mr. Haihambo, UNAM",
+      downloadUrl: "/Teacher's workshop Mr Haihambo UNAM.pptx",
+      category: "Professional Development",
       color: "from-purple-500 to-pink-500"
     },
     {
-      title: "Professional Development Models",
-      author: "Ms. Leena M. Iileka",
-      downloadUrl: "/slides/professional-development-2024.pptx",
-      category: "Slides",
-      color: "from-orange-500 to-red-500"
+      title: "Teacher Information Seminar",
+      author: "Mr. Pedro Tjakwanda",
+      downloadUrl: "/Teeacher Information Seminar- Mr Pedro Tjakwanda.pptx",
+      category: "Professional Development",
+      color: "from-cyan-500 to-blue-500"
+    },
+    {
+      title: "Cape Town GIFT Presentation",
+      author: "GIFT Program",
+      downloadUrl: "/CAPE TOWN GIFT PP.ppt",
+      category: "Science Education",
+      color: "from-teal-500 to-indigo-500"
+    },
+    {
+      title: "Group Discussion Presentation",
+      author: "Workshop Facilitators",
+      downloadUrl: "/Group Discussion.pptx",
+      category: "Interactive Learning",
+      color: "from-yellow-500 to-orange-500"
+    },
+    {
+      title: "Seminar Introduction",
+      author: "KEIDF Team",
+      downloadUrl: "/Seminar Introduction.ppt",
+      category: "Event Materials",
+      color: "from-red-500 to-pink-500"
+    },
+    {
+      title: "Seminar Feedback Analysis",
+      author: "KEIDF Team",
+      downloadUrl: "/Seminar Feedback.pptx",
+      category: "Event Materials",
+      color: "from-pink-500 to-red-500"
+    },
+    {
+      title: "Seminar Financial Contribution",
+      author: "KEIDF Team",
+      downloadUrl: "/Seminar Contribution account.pptx",
+      category: "Event Materials",
+      color: "from-gray-500 to-gray-700"
     }
   ];
 
@@ -161,8 +145,8 @@ export default function Resources() {
             
             <div className="flex flex-wrap gap-6">
               <div className="impact-card bg-white/10 backdrop-blur-md border-white/20 p-6 animate-expand-in">
-                <div className="text-2xl font-bold text-gray-900 mb-2">50+ Resources</div>
-                <div className="text-gray-700">Research papers & toolkits</div>
+                <div className="text-2xl font-bold text-gray-900 mb-2">17+ Resources</div>
+                <div className="text-gray-700">Presentations & documents</div>
               </div>
               <div className="impact-card bg-white/10 backdrop-blur-md border-white/20 p-6 animate-expand-in" style={{animationDelay: '0.2s'}}>
                 <div className="text-2xl font-bold text-gray-900 mb-2 flex items-center gap-2">
@@ -172,6 +156,10 @@ export default function Resources() {
                   Open Access
                 </div>
                 <div className="text-gray-700">Free educational materials</div>
+              </div>
+              <div className="impact-card bg-white/10 backdrop-blur-md border-white/20 p-6 animate-expand-in" style={{animationDelay: '0.4s'}}>
+                <div className="text-2xl font-bold text-gray-900 mb-2">Multiple Formats</div>
+                <div className="text-gray-700">PDF, PPT, DOC available</div>
               </div>
             </div>
           </div>
@@ -208,7 +196,7 @@ export default function Resources() {
                   </div>
                   
                   <h3 className="text-xl font-bold text-gray-900 mb-3 leading-tight">{paper.title}</h3>
-                  <div className="text-sm text-gray-600 mb-3 font-medium">By {paper.author} ({paper.year})</div>
+                  {paper.author && <div className="text-sm text-gray-600 mb-3 font-medium">By {paper.author} ({paper.year})</div>}
                   <p className="text-gray-700 leading-relaxed">{paper.description}</p>
                 </div>
                 
@@ -231,7 +219,7 @@ export default function Resources() {
         </div>
       </section>
 
-      {/* Toolkit Section */}
+      {/* Toolkit Section - Coming Soon */}
       <section className="section-trust py-20">
         <div className="container mx-auto px-8">
           <div className="text-center mb-16">
@@ -241,39 +229,140 @@ export default function Resources() {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {toolkitResources.map((resource, index) => (
-              <div key={index} className="impact-card bg-white/10 backdrop-blur-md border-white/20 p-8 animate-slide-diagonal group" style={{animationDelay: `${index * 0.1}s`}}>
-                <div className={`w-20 h-20 bg-gradient-to-br ${resource.color} flex items-center justify-center mb-6 text-3xl transform group-hover:scale-110 transition-transform duration-300`} style={{clipPath: 'polygon(0 0, calc(100% - 15px) 0, 100% 15px, 100% 100%, 15px 100%, 0 calc(100% - 15px))'}}>
-                  {resource.icon}
-                </div>
-                
-                <div className="mb-6">
-                  <div className="mb-3">
-                    <span className="inline-block px-3 py-1 bg-white/20 backdrop-blur-sm text-gray-900 text-xs font-bold uppercase tracking-wide border-l-4 border-yellow-400">
-                      {resource.category}
-                    </span>
-                  </div>
-                  
-                  <h3 className="text-xl font-bold text-gray-900 mb-3 leading-tight">{resource.title}</h3>
-                  <p className="text-gray-700 leading-relaxed">{resource.description}</p>
-                </div>
-                
-                <a
-                  href={resource.downloadUrl}
-                  className="inline-flex items-center text-yellow-400 hover:text-yellow-300 font-bold transition-colors group-hover:translate-x-2 transform transition-transform duration-300"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <div className="w-8 h-8 bg-yellow-400 angular-icon-small mr-3 flex items-center justify-center">
-                    <svg className="w-4 h-4 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3" />
-                    </svg>
-                  </div>
-                  Download
-                </a>
+          <div className="max-w-4xl mx-auto text-center">
+            <div className="impact-card bg-white/10 backdrop-blur-md border-white/20 p-12 animate-expand-in">
+              <div className="w-20 h-20 bg-gradient-to-br from-yellow-400 to-orange-500 mx-auto mb-8 flex items-center justify-center" style={{clipPath: 'polygon(0 0, calc(100% - 15px) 0, 100% 15px, 100% 100%, 15px 100%, 0 calc(100% - 15px))'}}>
+                <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                </svg>
               </div>
-            ))}
+              
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">Teaching Toolkit Coming Soon</h3>
+              <p className="text-gray-600 mb-8 text-lg leading-relaxed">
+                We're developing comprehensive teaching resources, activity guides, and implementation toolkits. 
+                Check back soon for practical materials to enhance your environmental education programs.
+              </p>
+              
+              <a
+                href="/contact"
+                className="cta-button bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-yellow-600 hover:to-orange-600 text-white px-8 py-3 font-bold font-space transition-all duration-300 transform hover:scale-105"
+              >
+                Get Notified When Available
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Program Documents Section */}
+      <section className="section-growth py-20">
+        <div className="container mx-auto px-8">
+          <div className="text-center mb-16">
+            <h2 className="section-title text-gray-900 mb-4">Program Documents & Resources</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Official program materials, attendance registers, and seminar documentation.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="impact-card bg-white p-8 animate-expand-in group">
+              <div className="w-16 h-16 bg-gradient-to-br from-gray-600 to-gray-800 flex items-center justify-center mb-4 transform group-hover:scale-110 transition-transform duration-300" style={{clipPath: 'polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px))'}}>
+                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                </svg>
+              </div>
+              
+              <div className="mb-6">
+                <div className="mb-2">
+                  <span className="inline-block px-3 py-1 bg-gray-100 text-gray-800 text-xs font-bold uppercase tracking-wide border-l-4 border-gray-400">
+                    Program Guide
+                  </span>
+                </div>
+                
+                <h3 className="text-xl font-bold text-gray-900 mb-3 leading-tight">KTISF Programme</h3>
+                <p className="text-gray-700 leading-relaxed">Complete program outline and schedule for the Teachers Information Sharing Forum</p>
+              </div>
+              
+              <a
+                href="/Programme KTISF.doc"
+                className="inline-flex items-center text-blue-600 hover:text-blue-800 font-bold transition-colors group-hover:translate-x-2 transform transition-transform duration-300"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <div className="w-8 h-8 bg-blue-500 angular-icon-small mr-3 flex items-center justify-center">
+                  <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3" />
+                  </svg>
+                </div>
+                Download DOC
+              </a>
+            </div>
+
+            <div className="impact-card bg-white p-8 animate-expand-in group" style={{animationDelay: '0.1s'}}>
+              <div className="w-16 h-16 bg-gradient-to-br from-red-600 to-red-800 flex items-center justify-center mb-4 transform group-hover:scale-110 transition-transform duration-300" style={{clipPath: 'polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px))'}}>
+                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
+                </svg>
+              </div>
+              
+              <div className="mb-6">
+                <div className="mb-2">
+                  <span className="inline-block px-3 py-1 bg-red-100 text-red-800 text-xs font-bold uppercase tracking-wide border-l-4 border-red-400">
+                    Attendance
+                  </span>
+                </div>
+                
+                <h3 className="text-xl font-bold text-gray-900 mb-3 leading-tight">Teacher Seminar Attendance Register</h3>
+                <p className="text-gray-700 leading-relaxed">Official attendance documentation for Plato and Freud Clusters Teacher Information Seminar</p>
+              </div>
+              
+              <a
+                href="/PLATO AND FREUD CLUSTERS TEACHERS INFORMATION SEMINAR ATTENDANCE REGISTER.doc"
+                className="inline-flex items-center text-blue-600 hover:text-blue-800 font-bold transition-colors group-hover:translate-x-2 transform transition-transform duration-300"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <div className="w-8 h-8 bg-blue-500 angular-icon-small mr-3 flex items-center justify-center">
+                  <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3" />
+                  </svg>
+                </div>
+                Download DOC
+              </a>
+            </div>
+
+            <div className="impact-card bg-white p-8 animate-expand-in group" style={{animationDelay: '0.2s'}}>
+              <div className="w-16 h-16 bg-gradient-to-br from-indigo-600 to-purple-800 flex items-center justify-center mb-4 transform group-hover:scale-110 transition-transform duration-300" style={{clipPath: 'polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px))'}}>
+                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
+                </svg>
+              </div>
+              
+              <div className="mb-6">
+                <div className="mb-2">
+                  <span className="inline-block px-3 py-1 bg-indigo-100 text-indigo-800 text-xs font-bold uppercase tracking-wide border-l-4 border-indigo-400">
+                    Organization
+                  </span>
+                </div>
+                
+                <h3 className="text-xl font-bold text-gray-900 mb-3 leading-tight">KEIDF Draft Document</h3>
+                <p className="text-gray-700 leading-relaxed">Founding document and organizational framework for Khomas Educators Innovation and Development Forum</p>
+              </div>
+              
+              <a
+                href="/Khomas Educators Innovation and Development Forum (KEIDF) 1st draft.doc"
+                className="inline-flex items-center text-blue-600 hover:text-blue-800 font-bold transition-colors group-hover:translate-x-2 transform transition-transform duration-300"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <div className="w-8 h-8 bg-blue-500 angular-icon-small mr-3 flex items-center justify-center">
+                  <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3" />
+                  </svg>
+                </div>
+                Download DOC
+              </a>
+            </div>
           </div>
         </div>
       </section>
@@ -282,13 +371,13 @@ export default function Resources() {
       <section className="section-trust py-20">
         <div className="container mx-auto px-8">
           <div className="text-center mb-16">
-            <h2 className="section-title text-white mb-6">Presentation Slides</h2>
+            <h2 className="section-title text-white mb-6">Presentation Slides & Educational Materials</h2>
             <p className="text-xl text-white/90 max-w-3xl mx-auto">
-              Ready-to-use presentations from expert speakers and researchers.
+              PowerPoint presentations from workshops, seminars, and educational programs across various disciplines.
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-8xl mx-auto">
             {slidesAndPresentations.map((slide, index) => (
               <div key={index} className="impact-card bg-white/10 backdrop-blur-md border-white/20 p-8 animate-expand-in group" style={{animationDelay: `${index * 0.2}s`}}>
                 <div className={`w-16 h-16 bg-gradient-to-br ${slide.color} flex items-center justify-center mb-6 transform group-hover:scale-110 transition-transform duration-300`} style={{clipPath: 'polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px))'}}>
@@ -304,8 +393,8 @@ export default function Resources() {
                     </span>
                   </div>
                   
-                  <h3 className="text-xl font-bold text-gray-900 mb-3 leading-tight">{slide.title}</h3>
-                  <div className="text-yellow-800 font-semibold">By {slide.author}</div>
+                  <h3 className="text-lg font-bold text-gray-900 mb-2 leading-tight">{slide.title}</h3>
+                  {slide.author && <div className="text-yellow-800 font-semibold">By {slide.author}</div>}
                 </div>
                 
                 <a

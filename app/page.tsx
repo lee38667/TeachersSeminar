@@ -19,7 +19,7 @@ export default function Home() {
               
               <div className="mb-8">
                 <h2 className="text-2xl md:text-3xl text-white/90 font-light italic mb-4">
-                  "Exploring Namibia's Marine Ecosystems"
+                  "Advancing Environmental Education Excellence"
                 </h2>
                 <p className="text-xl text-white/80 max-w-2xl leading-relaxed">
                   Join the movement. Shape the future. Empower the next generation through 
@@ -63,7 +63,7 @@ export default function Home() {
               <div className="impact-card text-center animate-expand-in group" style={{animationDelay: '0.2s'}}>
                 <div className="stat-number mb-4 group-hover:scale-110 transition-transform duration-300">35+</div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-2">Schools Transformed</h3>
-                <p className="text-gray-600">Implementing marine conservation curricula</p>
+                <p className="text-gray-600">Implementing environmental education curricula</p>
               </div>
               
               <div className="impact-card text-center animate-expand-in group" style={{animationDelay: '0.4s'}}>
@@ -75,7 +75,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Bold Testimonials with Angular Design */}
+        {/* Bold Testimonials with Angular Design
         <section className="section-trust py-20">
           <div className="container mx-auto px-8">
             <h2 className="section-title text-white text-center mb-16">Voices of Change</h2>
@@ -83,8 +83,7 @@ export default function Home() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
               <div className="testimonial-angular animate-slide-diagonal">
                 <blockquote className="text-lg text-gray-700 mb-6 italic font-medium">
-                  "This seminar didn't just change how I teach—it revolutionized how my students 
-                  see their relationship with the ocean. They're now passionate advocates for marine conservation."
+                  "This seminar didn't just change how I teach—it transformed how my students see their responsibility toward the environment. They're now passionate advocates for sustainability."
                 </blockquote>
                 <div className="flex items-center">
                   <div className="w-12 h-12 bg-gradient-to-br from-teal-400 to-blue-500 rounded-full mr-4"></div>
@@ -98,7 +97,7 @@ export default function Home() {
               <div className="testimonial-angular animate-slide-diagonal" style={{animationDelay: '0.3s'}}>
                 <blockquote className="text-lg text-gray-700 mb-6 italic font-medium">
                   "The networking opportunities and practical resources have transformed my classroom. 
-                  I now integrate indigenous knowledge with cutting-edge marine science."
+                  I now integrate indigenous knowledge with cutting-edge environmental science."
                 </blockquote>
                 <div className="flex items-center">
                   <div className="w-12 h-12 bg-gradient-to-br from-green-400 to-teal-500 rounded-full mr-4"></div>
@@ -110,7 +109,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-        </section>
+        </section> */}
 
         {/* Partner Network - Hexagonal Design */}
         <section className="section-growth py-20">
@@ -121,7 +120,7 @@ export default function Home() {
                 United in purpose. Committed to educational excellence.
               </p>
             </div>
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 max-w-9xl mx-auto">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 max-w-9xl mx-auto">
               <div className="partner-hex animate-float">
                 <div className="text-center">
                   <div className="w-16 h-16 mx-auto mb-3 flex items-center justify-center">
@@ -183,6 +182,86 @@ export default function Home() {
                   </div>
                   <div className="font-bold text-red-600 text-lg">MoEAC</div>
                   <div className="text-xs text-gray-500">Policy Leadership</div>
+                </div>
+              </div>
+
+              <div className="partner-hex animate-float" style={{animationDelay: '2s'}}>
+                <div className="text-center">
+                  <div className="w-16 h-16 mx-auto mb-3 flex items-center justify-center">
+                    <Image 
+                      src="/EIFLogo.png" 
+                      alt="Environmental Investment Fund Logo" 
+                      width={64} 
+                      height={64}
+                      className="object-contain filter hover:scale-110 transition-transform duration-300"
+                    />
+                  </div>
+                  <div className="font-bold text-green-600 text-lg">EIF</div>
+                  <div className="text-xs text-gray-500">Sustainability Funding</div>
+                </div>
+              </div>
+
+              <div className="partner-hex animate-float" style={{animationDelay: '2.5s'}}>
+                <div className="text-center">
+                  <div className="w-16 h-16 mx-auto mb-3 flex items-center justify-center">
+                    <Image 
+                      src="/MEFTLogo.png" 
+                      alt="Ministry of Environment, Forestry and Tourism Logo" 
+                      width={64} 
+                      height={64}
+                      className="object-contain filter hover:scale-110 transition-transform duration-300"
+                    />
+                  </div>
+                  <div className="font-bold text-emerald-600 text-lg">MEFT</div>
+                  <div className="text-xs text-gray-500">Environmental Stewardship</div>
+                </div>
+              </div>
+
+              <div className="partner-hex animate-float" style={{animationDelay: '3s'}}>
+                <div className="text-center">
+                  <div className="w-16 h-16 mx-auto mb-3 flex items-center justify-center">
+                    <Image 
+                      src="/BotanicalGarden.png" 
+                      alt="National Botanical Garden Logo" 
+                      width={64} 
+                      height={64}
+                      className="object-contain filter hover:scale-110 transition-transform duration-300"
+                    />
+                  </div>
+                  <div className="font-bold text-teal-600 text-lg">Botanical</div>
+                  <div className="text-xs text-gray-500">Biodiversity Support</div>
+                </div>
+              </div>
+
+              <div className="partner-hex animate-float" style={{animationDelay: '3.5s'}}>
+                <div className="text-center">
+                  <div className="w-16 h-16 mx-auto mb-3 flex items-center justify-center">
+                    <Image 
+                      src="/MindsInAction.png" 
+                      alt="Minds in Action Logo" 
+                      width={64} 
+                      height={64}
+                      className="object-contain filter hover:scale-110 transition-transform duration-300"
+                    />
+                  </div>
+                  <div className="font-bold text-indigo-600 text-lg">Minds</div>
+                  <div className="text-xs text-gray-500">STEM Engagement</div>
+                </div>
+              </div>
+
+              <div className="partner-hex animate-float" style={{animationDelay: '4s'}}>
+                <div className="text-center">
+                  <div className="w-16 h-16 mx-auto mb-3 flex items-center justify-center">
+                    <Image 
+                      src="/NNFLogo.png" 
+                      alt="Namibia Nature Foundation Logo" 
+                      width={64} 
+                      height={64}
+                      className="object-contain filter hover:scale-110 transition-transform duration-300"
+                    />
+                  </div>
+                  <div className="font-bold text-green-700 text-lg">NNF</div>
+                  <div className="text-xs text-gray-500">Conservation Partner</div>
                 </div>
               </div>
             </div>

@@ -591,7 +591,6 @@ export default function Register() {
                             <option value="sustainable-development">Education for Sustainable Development (ESD)</option>
                             <option value="tech-integration">Technology Integration</option>
                             <option value="indigenous-knowledge">Indigenous Knowledge Systems</option>
-                            <option value="marine-ecosystems">Marine Ecosystems</option>
                             <option value="climate-change">Climate Change Education</option>
                           </Field>
                         </div>

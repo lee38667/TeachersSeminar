@@ -9,7 +9,7 @@ export default function About() {
                 </div>
                 <div>
                   <h3 className="text-2xl font-bold text-white mb-2">Environmental Leadership</h3>
-                  <p className="text-white/80">Strengthen marine ecosystem awareness and conservation practices nationwide</p>
+                  <p className="text-white/80">Strengthen environmental awareness and sustainable practices nationwide</p>
                 </div>
               </div>lex items-start space-x-4 mb-6">
                 <div className="w-12 h-12 bg-yellow-400 flex items-center justify-center" style={{clipPath: 'polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 8px 100%, 0 calc(100% - 8px))'}}>
@@ -46,7 +46,7 @@ export default function About() {
             </h1>
             
             <p className="text-xl text-white/90 max-w-3xl leading-relaxed mb-12">
-              The Van Rhyn Initiative pioneers revolutionary environmental education across Namibia, 
+              The Primary Teachers Transformation Initiative pioneers revolutionary environmental education across Namibia, 
               bridging scientific innovation with classroom excellence through bold, impactful teaching methodologies.
             </p>
           </div>
@@ -60,7 +60,7 @@ export default function About() {
       <section className="section-growth py-20">
         <div className="container mx-auto px-8">
           <div className="text-center mb-16">
-            <h2 className="section-title text-gray-900 mb-4">The Van Rhyn Initiative</h2>
+            <h2 className="section-title text-gray-900 mb-4">The Primary Teachers Transformation Initiative</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Born from innovation. Driven by impact. Focused on transformation.
             </p>
@@ -82,8 +82,8 @@ export default function About() {
                 knowledge and innovative methodologies.
               </p>
               <p className="text-gray-700 leading-relaxed">
-                Our focus on marine ecosystem education recognizes Namibia's unique coastal heritage and 
-                the critical importance of conservation for future generations.
+                Our focus on environmental education recognizes Namibia's diverse ecological heritage and 
+                the critical importance of sustainability for future generations.
               </p>
             </div>
 
@@ -147,7 +147,7 @@ export default function About() {
                 </div>
                 <div>
                   <h3 className="text-2xl font-bold text-gray-900 mb-2">Environmental Leadership</h3>
-                  <p className="text-gray-700">Strengthen marine ecosystem awareness and conservation practices nationwide</p>
+                  <p className="text-gray-700">Strengthen environmental awareness and sustainable practices nationwide</p>
                 </div>
               </div>
             </div>
@@ -202,7 +202,7 @@ export default function About() {
               <div className="flex items-center">
                 <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-teal-500 rounded-full mr-4"></div>
                 <div>
-                  <div className="font-bold text-gray-900">Research findings by Leena M. Iileka</div>
+                  <div className="font-bold text-gray-900">Findings by Leena M. Iileka</div>
                   <div className="text-sm text-gray-600">Educational Impact Assessment</div>
                 </div>
               </div>
@@ -270,6 +270,10 @@ export default function About() {
                 <div className="flex items-center space-x-4">
                   <div className="w-3 h-3 bg-orange-400 transform rotate-45"></div>
                   <span className="text-gray-700 text-lg">National Development Plan 5</span>
+                </div>
+                <div className="flex items-center space-x-4">
+                  <div className="w-3 h-3 bg-orange-300 transform rotate-45"></div>
+                  <span className="text-gray-700 text-lg">National Development Plan 6</span>
                 </div>
                 <div className="flex items-center space-x-4">
                   <div className="w-3 h-3 bg-cyan-400 transform rotate-45"></div>

@@ -1,75 +1,32 @@
 export default function Program() {
   const speakers = [
-    {
-      name: "Dr. Maria Nghipangelwa",
-      title: "Marine Biologist, UNAM",
-      topic: "Namibian Coastal Ecosystems and Climate Change",
-      image: (
-        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-        </svg>
-      ),
-      bio: "Leading researcher in marine conservation with 15+ years experience",
-      color: "from-blue-500 to-teal-500"
-    },
-    {
-      name: "Ms. Leena M. Iileka",
-      title: "Education Researcher, Van Rhyn Primary",
-      topic: "Teacher-led Professional Development Models",
-      image: (
-        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-        </svg>
-      ),
-      bio: "Pioneer in teacher empowerment and environmental education integration",
-      color: "from-green-500 to-emerald-500"
-    },
-    {
-      name: "Prof. Johannes Nakale",
-      title: "Environmental Education Specialist, IUM",
-      topic: "Indigenous Knowledge in Marine Conservation",
-      image: (
-        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-        </svg>
-      ),
-      bio: "Expert in traditional ecological knowledge and sustainable practices",
-      color: "from-purple-500 to-indigo-500"
-    },
-    {
-      name: "Dr. Sarah Katjavivi",
-      title: "Technology Integration Coordinator, UNESCO",
-      topic: "Digital Tools for Environmental Education",
-      image: (
-        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 17V7m0 10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h2a2 2 0 012 2m0 10a2 2 0 002 2h2a2 2 0 002-2M9 7a2 2 0 012-2h2a2 2 0 012 2m0 10V7m0 10a2 2 0 002 2h2a2 2 0 002-2V7a2 2 0 00-2-2h-2a2 2 0 00-2 2" />
-        </svg>
-      ),
-      bio: "Specialist in educational technology and digital learning platforms",
-      color: "from-orange-500 to-red-500"
-    }
+    { name: 'Dr. Heidi Cavanagh', topic: 'Ocean Simulation' },
+    { name: 'Dr. Faustina Neshila', topic: '' },
+    { name: 'TaRl', topic: 'Literacy and Numeracy Skills' },
+    { name: 'Ms. Melba Mabuku-Sitwala', topic: '' },
+    { name: 'Ms. Leena Iileka', topic: 'Introduction of the Program' }
   ];
 
   const agenda = {
     day1: [
       { time: "08:00-08:30", activity: "Registration & Welcome Coffee", type: "admin" },
-      { time: "08:30-09:00", activity: "Opening Ceremony & Keynote Address", type: "keynote", speaker: "Hon. Anna Nghipondoka, Minister of Education" },
-      { time: "09:00-10:30", activity: "Namibian Coastal Ecosystems and Climate Change", type: "presentation", speaker: "Dr. Maria Nghipangelwa" },
+  { time: "08:30-09:00", activity: "Opening Ceremony & Keynote Address", type: "keynote", speaker: "" },
+  { time: "09:00-10:30", activity: "Session 1", type: "presentation", speaker: "" },
       { time: "10:30-10:45", activity: "Tea Break", type: "break" },
-      { time: "10:45-12:15", activity: "Teacher-led Professional Development Models", type: "presentation", speaker: "Ms. Leena M. Iileka" },
+  { time: "10:45-12:15", activity: "Teacher-led Professional Development Models", type: "presentation", speaker: "Ms. Leena Iileka" },
       { time: "12:15-13:15", activity: "Lunch & Networking", type: "break" },
-      { time: "13:15-14:45", activity: "Workshop: Creating Marine Education Materials", type: "workshop" },
+  { time: "13:15-14:45", activity: "Workshop", type: "workshop", speaker: "" },
       { time: "14:45-15:00", activity: "Refreshment Break", type: "break" },
       { time: "15:00-16:30", activity: "Panel Discussion: Challenges in Environmental Education", type: "panel" },
       { time: "16:30-17:00", activity: "Day 1 Wrap-up & Reflections", type: "discussion" }
     ],
     day2: [
       { time: "08:00-08:30", activity: "Morning Networking & Coffee", type: "admin" },
-      { time: "08:30-10:00", activity: "Indigenous Knowledge in Marine Conservation", type: "presentation", speaker: "Prof. Johannes Nakale" },
+  { time: "08:30-10:00", activity: "Session 2", type: "presentation", speaker: "" },
       { time: "10:00-10:15", activity: "Tea Break", type: "break" },
-      { time: "10:15-11:45", activity: "Digital Tools for Environmental Education", type: "presentation", speaker: "Dr. Sarah Katjavivi" },
+  { time: "10:15-11:45", activity: "Digital Tools for Environmental Education", type: "presentation", speaker: "" },
       { time: "11:45-12:45", activity: "Lunch", type: "break" },
-      { time: "12:45-14:15", activity: "Teacher Presentations & Best Practices Sharing", type: "teacher-presentations" },
+  { time: "12:45-14:15", activity: "Teacher Presentations & Best Practices Sharing (incl. Ms. Leena Iileka)", type: "teacher-presentations", speaker: "" },
       { time: "14:15-14:30", activity: "Refreshment Break", type: "break" },
       { time: "14:30-15:30", activity: "Action Planning & Next Steps", type: "workshop" },
       { time: "15:30-16:00", activity: "Closing Ceremony & Certificate Presentation", type: "closing" }
@@ -118,7 +75,7 @@ export default function Program() {
             </h1>
             
             <p className="text-xl text-white/90 max-w-3xl leading-relaxed mb-12">
-              Intensive learning, dynamic sharing, and transformative networking. 
+              Intensive learning, dynamic sharing, and transformative networking hosted at Van Rhyn Primary School in Windhoek North.
               Experience cutting-edge methodologies that will revolutionize your teaching practice.
             </p>
             
@@ -128,8 +85,8 @@ export default function Program() {
                 <div className="text-gray-700">Two transformative days</div>
               </div>
               <div className="impact-card bg-white/10 backdrop-blur-md border-white/20 p-6 animate-expand-in" style={{animationDelay: '0.2s'}}>
-                <div className="text-2xl font-bold text-gray-900 mb-2">Location: </div>
-                <div className="text-gray-700">TBA</div>
+                <div className="text-2xl font-bold text-gray-900 mb-2">Location:</div>
+                <div className="text-gray-700">Van Rhyn Primary School, Windhoek North</div>
               </div>
             </div>
           </div>
@@ -149,7 +106,7 @@ export default function Program() {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
             <div className="impact-card p-6 animate-expand-in group">
               <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-teal-500 flex items-center justify-center mb-4 transform group-hover:scale-110 transition-transform duration-300" style={{clipPath: 'polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px))'}}>
                 <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -157,7 +114,7 @@ export default function Program() {
                 </svg>
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">Environmental Education</h3>
-              <p className="text-gray-600">Marine ecosystem awareness and conservation strategies</p>
+              <p className="text-gray-600">Environmental awareness and sustainability strategies</p>
             </div>
 
             <div className="impact-card p-6 animate-expand-in group" style={{animationDelay: '0.1s'}}>
@@ -189,6 +146,13 @@ export default function Program() {
               <h3 className="text-xl font-bold text-gray-900 mb-3">Technology Innovation</h3>
               <p className="text-gray-600">Digital tools and modern learning platforms</p>
             </div>
+            <div className="impact-card p-6 animate-expand-in group" style={{animationDelay: '0.4s'}}>
+              <div className="w-16 h-16 bg-gradient-to-br from-teal-500 to-green-500 flex items-center justify-center mb-4 transform group-hover:scale-110 transition-transform duration-300" style={{clipPath: 'polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px))'}}>
+                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Site Visits</h3>
+              <p className="text-gray-600">Immersive real-world learning experiences</p>
+            </div>
           </div>
         </div>
       </section>
@@ -197,26 +161,17 @@ export default function Program() {
       <section className="section-trust py-20">
         <div className="container mx-auto px-8">
           <div className="text-center mb-16">
-            <h2 className="section-title text-white mb-6">Thought Leaders</h2>
+            <h2 className="section-title text-white mb-6">Speakers / Presenters</h2>
             <p className="text-xl text-white/90 max-w-3xl mx-auto">
               Visionary experts driving the future of environmental education across Africa.
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
             {speakers.map((speaker, index) => (
-              <div key={index} className="impact-card bg-white/10 backdrop-blur-md border-white/20 p-8 animate-slide-diagonal" style={{animationDelay: `${index * 0.2}s`}}>
-                <div className="flex items-start space-x-6">
-                  <div className={`w-20 h-20 bg-gradient-to-br ${speaker.color} flex items-center justify-center text-3xl flex-shrink-0`} style={{clipPath: 'polygon(0 0, calc(100% - 15px) 0, 100% 15px, 100% 100%, 15px 100%, 0 calc(100% - 15px))'}}>
-                    {speaker.image}
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="text-2xl font-bold text-gray-900 mb-2">{speaker.name}</h3>
-                    <div className="text-yellow-400 font-semibold mb-3">{speaker.title}</div>
-                    <div className="text-gray-600 font-medium mb-3">"{speaker.topic}"</div>
-                    <p className="text-gray-600/80 leading-relaxed">{speaker.bio}</p>
-                  </div>
-                </div>
+              <div key={index} className="impact-card bg-white/10 backdrop-blur-md border-white/20 p-6 animate-slide-diagonal" style={{animationDelay: `${index * 0.15}s`}}>
+                <h3 className="text-xl font-bold text-gray-900 mb-1">{speaker.name}</h3>
+                {speaker.topic && <p className="text-gray-700">{speaker.topic}</p>}
               </div>
             ))}
           </div>

@@ -14,11 +14,11 @@ export default function Footer() {
               <span className="font-bold text-xl">KEIDF Seminar</span>
             </div>
             <p className="text-gray-300 mb-4">
-              Empowering Namibian educators through innovative marine ecosystem education 
+              Empowering Namibian educators through innovative environmental education 
               and sustainable teaching practices.
             </p>
             <p className="text-gray-400 text-sm">
-              Van Rhyn Primary School Initiative | Windhoek, Namibia
+              Primary Teachers Transformation Initiative | Windhoek, Namibia
             </p>
           </div>
 
@@ -43,13 +43,18 @@ export default function Footer() {
               <li>IUM</li>
               <li>CeMEES</li>
               <li>Ministry of Education</li>
+              <li>EIF</li>
+              <li>MEFT</li>
+              <li>Botanical Garden</li>
+              <li>Minds in Action</li>
+              <li>NNF</li>
             </ul>
           </div>
         </div>
 
         <div className="border-t border-gray-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-400 text-sm">
-            © 2025 Khomas Education Information Development Foundation. All rights reserved.
+            © 2025 Khomas Education Information Development Forum. All rights reserved.
           </p>
           <div className="flex space-x-4 mt-4 md:mt-0">
             <span className="text-gray-400 text-sm">SDG Goals: 4, 13, 17</span>

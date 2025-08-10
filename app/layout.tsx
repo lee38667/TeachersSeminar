@@ -5,7 +5,7 @@ import Footer from './components/Footer';
 import ScrollProgress from './components/ScrollProgress';
 
 export const metadata = {
-  title: 'KEIDF - Transforming Education Through Marine Science',
+  title: 'KEIDF - Transforming Education Through Environmental Education',
   description: 'Join the movement to revolutionize environmental education across Namibia. Bold. Innovative. Impact-driven.',
 };
 

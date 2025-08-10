@@ -77,12 +77,12 @@ export default function Contact() {
             
             <div className="flex flex-wrap gap-6">
               <div className="impact-card bg-white/10 backdrop-blur-md border-white/20 p-6 animate-expand-in">
-                <div className="text-2xl font-bold text-white mb-2">24hr Response</div>
-                <div className="text-white/80">Quick professional support</div>
+                <div className="text-2xl font-bold text-gray-900 mb-2">24hr Response</div>
+                <div className="text-gray-600">Quick professional support</div>
               </div>
               <div className="impact-card bg-white/10 backdrop-blur-md border-white/20 p-6 animate-expand-in" style={{animationDelay: '0.2s'}}>
-                <div className="text-2xl font-bold text-white mb-2">3 Languages</div>
-                <div className="text-white/80">English, Afrikaans, Oshiwambo</div>
+                <div className="text-2xl font-bold text-gray-900 mb-2">3 Languages</div>
+                <div className="text-gray-600">English, Afrikaans, Oshiwambo</div>
               </div>
             </div>
           </div>
@@ -115,7 +115,7 @@ export default function Contact() {
                       <h4 className="font-bold text-gray-900 mb-2">Physical Address</h4>
                       <p className="text-gray-600 leading-relaxed">
                         Van Rhyn Primary School<br />
-                        Katutura, Windhoek<br />
+                        Windhoek North<br />
                         Khomas Region, Namibia
                       </p>
                     </div>
@@ -130,11 +130,8 @@ export default function Contact() {
                     <div>
                       <h4 className="font-bold text-gray-900 mb-2">Email Contacts</h4>
                       <p className="text-gray-600 leading-relaxed">
-                        <a href="mailto:info@keidf-seminar.org" className="text-green-600 hover:text-green-800 font-medium">
-                          info@keidf-seminar.org
-                        </a><br />
-                        <a href="mailto:registration@keidf-seminar.org" className="text-green-600 hover:text-green-800 font-medium">
-                          registration@keidf-seminar.org
+                        <a href="mailto:leena.vrhynps@gmail.com" className="text-green-600 hover:text-green-800 font-medium">
+                          leena.vrhynps@gmail.com
                         </a>
                       </p>
                     </div>
@@ -149,33 +146,19 @@ export default function Contact() {
                     <div>
                       <h4 className="font-bold text-gray-900 mb-2">Phone Numbers</h4>
                       <p className="text-gray-600 leading-relaxed">
-                        +264 61 234 5678<br />
-                        +264 81 123 4567 (Mobile)
+                        061 226111<br />
+                        081 283 3157 / 081 321 4160
                       </p>
                     </div>
                   </div>
 
-                  <div className="flex items-start">
-                    <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-red-500 angular-icon mr-6 mt-1 flex items-center justify-center">
-                      <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                      </svg>
-                    </div>
-                    <div>
-                      <h4 className="font-bold text-gray-900 mb-2">Office Hours</h4>
-                      <p className="text-gray-600 leading-relaxed">
-                        Monday - Friday: 8:00 AM - 5:00 PM<br />
-                        Saturday: 9:00 AM - 1:00 PM<br />
-                        Sunday: Closed
-                      </p>
-                    </div>
-                  </div>
+                  {/* Office Hours removed per update */}
                 </div>
               </div>
 
               {/* Key Personnel */}
               <div className="impact-card bg-white p-8 animate-expand-in" style={{animationDelay: '0.3s'}}>
-                <h3 className="text-2xl font-bold mb-8 text-gray-900">Key Personnel</h3>
+                <h3 className="text-2xl font-bold mb-8 text-gray-900">Key Contacts</h3>
                 
                 <div className="space-y-8">
                   <div className="flex items-start">
@@ -183,43 +166,29 @@ export default function Contact() {
                       <span className="text-white font-bold text-lg">LI</span>
                     </div>
                     <div>
-                      <h4 className="font-bold text-gray-900 mb-1">Ms. Leena M. Iileka</h4>
-                      <p className="text-gray-600 font-medium mb-2">Seminar Coordinator & Education Researcher</p>
-                      <p className="text-sm text-gray-500">
-                        <a href="mailto:leena.iileka@keidf-seminar.org" className="text-blue-600 hover:text-blue-800">
-                          leena.iileka@keidf-seminar.org
-                        </a>
-                      </p>
+                      <h4 className="font-bold text-gray-900 mb-1">Ms. Leena Iileka</h4>
+                      <p className="text-gray-600 font-medium mb-2">Van Rhyn Primary School</p>
+                      <p className="text-sm text-gray-500">081 283 3157 / 081 321 4160</p>
                     </div>
                   </div>
-                  
                   <div className="flex items-start">
                     <div className="w-14 h-14 bg-gradient-to-br from-green-500 to-emerald-500 angular-icon mr-6 flex items-center justify-center">
-                      <span className="text-white font-bold text-lg">VR</span>
+                      <span className="text-white font-bold text-lg">AN</span>
                     </div>
                     <div>
-                      <h4 className="font-bold text-gray-900 mb-1">Mr. Andreas Van Rhyn</h4>
-                      <p className="text-gray-600 font-medium mb-2">Principal, Van Rhyn Primary School</p>
-                      <p className="text-sm text-gray-500">
-                        <a href="mailto:principal@vanrhyn.edu.na" className="text-green-600 hover:text-green-800">
-                          principal@vanrhyn.edu.na
-                        </a>
-                      </p>
+                      <h4 className="font-bold text-gray-900 mb-1">Mr. Ananias</h4>
+                      <p className="text-gray-600 font-medium mb-2">Theo Katjimune PS</p>
+                      <p className="text-sm text-gray-500">081 321 4160</p>
                     </div>
                   </div>
-                  
                   <div className="flex items-start">
                     <div className="w-14 h-14 bg-gradient-to-br from-purple-500 to-indigo-500 angular-icon mr-6 flex items-center justify-center">
-                      <span className="text-white font-bold text-lg">EN</span>
+                      <span className="text-white font-bold text-lg">SH</span>
                     </div>
                     <div>
-                      <h4 className="font-bold text-gray-900 mb-1">Dr. Elizabeth Nakamhela</h4>
-                      <p className="text-gray-600 font-medium mb-2">Academic Director, Environmental Education</p>
-                      <p className="text-sm text-gray-500">
-                        <a href="mailto:academic@keidf-seminar.org" className="text-purple-600 hover:text-purple-800">
-                          academic@keidf-seminar.org
-                        </a>
-                      </p>
+                      <h4 className="font-bold text-gray-900 mb-1">Ms. Sofia Haipinge</h4>
+                      <p className="text-gray-600 font-medium mb-2">Green Leaves PS</p>
+                      <p className="text-sm text-gray-500">+264 81 313 4661</p>
                     </div>
                   </div>
                 </div>
@@ -395,7 +364,7 @@ export default function Contact() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                     </svg>
                     <p className="font-bold text-lg mb-2">Van Rhyn Primary School</p>
-                    <p className="text-sm mb-1">Katutura, Windhoek</p>
+                    <p className="text-sm mb-1">Windhoek North</p>
                     <p className="text-sm mb-3">Khomas Region, Namibia</p>
                     <p className="text-xs text-gray-500 flex items-center gap-1">
                       <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
