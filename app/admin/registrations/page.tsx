@@ -12,8 +12,10 @@ export default function RegistrationsManagement() {
     participationType: '',
     region: '',
     hasAttendedBefore: '',
+    status: '',
   });
   const [selectedRegistrations, setSelectedRegistrations] = useState<string[]>([]);
+  const [actionLoading, setActionLoading] = useState<string>('');
   const router = useRouter();
 
   useEffect(() => {
@@ -54,8 +56,9 @@ export default function RegistrationsManagement() {
       const matchesType = !filters.participationType || reg.participationType === filters.participationType;
       const matchesRegion = !filters.region || reg.region === filters.region;
       const matchesAttended = !filters.hasAttendedBefore || reg.hasAttendedBefore === filters.hasAttendedBefore;
+      const matchesStatus = !filters.status || (reg.status || 'pending') === filters.status;
 
-      return matchesSearch && matchesType && matchesRegion && matchesAttended;
+      return matchesSearch && matchesType && matchesRegion && matchesAttended && matchesStatus;
     });
 
     setFilteredRegistrations(filtered);
@@ -120,6 +123,123 @@ export default function RegistrationsManagement() {
     alert(`Sending emails to ${selectedRegistrations.length} selected participants...`);
   };
 
+  const approveRegistrations = async (registrationIds: string[]) => {
+    if (!confirm(`Are you sure you want to approve ${registrationIds.length} registration(s)? This will send confirmation emails.`)) {
+      return;
+    }
+
+    setActionLoading('approve');
+    try {
+      const token = localStorage.getItem('admin_token');
+      const response = await fetch('/api/admin/registrations', {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${token}`,
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          action: 'approve',
+          registrationIds
+        })
+      });
+
+      if (response.ok) {
+        const result = await response.json();
+        alert(result.message);
+        fetchRegistrations(); // Refresh the list
+        setSelectedRegistrations([]); // Clear selection
+      } else {
+        alert('Failed to approve registrations');
+      }
+    } catch (error) {
+      alert('Error approving registrations');
+    } finally {
+      setActionLoading('');
+    }
+  };
+
+  const deleteRegistrations = async (registrationIds: string[]) => {
+    if (!confirm(`Are you sure you want to DELETE ${registrationIds.length} registration(s)? This action cannot be undone.`)) {
+      return;
+    }
+
+    setActionLoading('delete');
+    try {
+      const token = localStorage.getItem('admin_token');
+      const response = await fetch('/api/admin/registrations', {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${token}`,
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          action: 'delete',
+          registrationIds
+        })
+      });
+
+      if (response.ok) {
+        const result = await response.json();
+        alert(result.message);
+        fetchRegistrations(); // Refresh the list
+        setSelectedRegistrations([]); // Clear selection
+      } else {
+        alert('Failed to delete registrations');
+      }
+    } catch (error) {
+      alert('Error deleting registrations');
+    } finally {
+      setActionLoading('');
+    }
+  };
+
+  const rejectRegistrations = async (registrationIds: string[]) => {
+    if (!confirm(`Are you sure you want to REJECT ${registrationIds.length} registration(s)?`)) {
+      return;
+    }
+
+    setActionLoading('reject');
+    try {
+      const token = localStorage.getItem('admin_token');
+      const response = await fetch('/api/admin/registrations', {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${token}`,
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          action: 'reject',
+          registrationIds
+        })
+      });
+
+      if (response.ok) {
+        const result = await response.json();
+        alert(result.message);
+        fetchRegistrations(); // Refresh the list
+        setSelectedRegistrations([]); // Clear selection
+      } else {
+        alert('Failed to reject registrations');
+      }
+    } catch (error) {
+      alert('Error rejecting registrations');
+    } finally {
+      setActionLoading('');
+    }
+  };
+
+  const approveSingle = async (registrationId: string) => {
+    await approveRegistrations([registrationId]);
+  };
+
+  const deleteSingle = async (registrationId: string) => {
+    await deleteRegistrations([registrationId]);
+  };
+
+  const rejectSingle = async (registrationId: string) => {
+    await rejectRegistrations([registrationId]);
+  };
+
   if (loading) {
     return (
       <div className="min-h-screen bg-gray-50 flex items-center justify-center">
@@ -154,15 +274,86 @@ export default function RegistrationsManagement() {
             
             <div className="flex gap-4">
               {selectedRegistrations.length > 0 && (
-                <button
-                  onClick={sendEmailToSelected}
-                  className="flex items-center px-4 py-2 bg-blue-600 text-white angular-button hover:bg-blue-700 transition-colors"
-                >
-                  <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                  </svg>
-                  Email Selected ({selectedRegistrations.length})
-                </button>
+                <>
+                  <button
+                    onClick={sendEmailToSelected}
+                    className="flex items-center px-4 py-2 bg-blue-600 text-white angular-button hover:bg-blue-700 transition-colors"
+                  >
+                    <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                    Email Selected ({selectedRegistrations.length})
+                  </button>
+                  
+                  <button
+                    onClick={() => approveRegistrations(selectedRegistrations)}
+                    disabled={actionLoading === 'approve'}
+                    className="flex items-center px-4 py-2 bg-emerald-600 text-white angular-button hover:bg-emerald-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                  >
+                    {actionLoading === 'approve' ? (
+                      <>
+                        <svg className="animate-spin w-4 h-4 mr-2" fill="none" viewBox="0 0 24 24">
+                          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                        </svg>
+                        Approving...
+                      </>
+                    ) : (
+                      <>
+                        <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                        </svg>
+                        Approve Selected ({selectedRegistrations.length})
+                      </>
+                    )}
+                  </button>
+                  
+                  <button
+                    onClick={() => rejectRegistrations(selectedRegistrations)}
+                    disabled={actionLoading === 'reject'}
+                    className="flex items-center px-4 py-2 bg-amber-600 text-white angular-button hover:bg-amber-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                  >
+                    {actionLoading === 'reject' ? (
+                      <>
+                        <svg className="animate-spin w-4 h-4 mr-2" fill="none" viewBox="0 0 24 24">
+                          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                        </svg>
+                        Rejecting...
+                      </>
+                    ) : (
+                      <>
+                        <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                        Reject Selected ({selectedRegistrations.length})
+                      </>
+                    )}
+                  </button>
+                  
+                  <button
+                    onClick={() => deleteRegistrations(selectedRegistrations)}
+                    disabled={actionLoading === 'delete'}
+                    className="flex items-center px-4 py-2 bg-red-600 text-white angular-button hover:bg-red-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                  >
+                    {actionLoading === 'delete' ? (
+                      <>
+                        <svg className="animate-spin w-4 h-4 mr-2" fill="none" viewBox="0 0 24 24">
+                          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                        </svg>
+                        Deleting...
+                      </>
+                    ) : (
+                      <>
+                        <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                        </svg>
+                        Delete Selected ({selectedRegistrations.length})
+                      </>
+                    )}
+                  </button>
+                </>
               )}
               
               <button
@@ -180,12 +371,85 @@ export default function RegistrationsManagement() {
       </header>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        {/* Status Statistics */}
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+          <div className="bg-white angular-form shadow p-6">
+            <div className="flex items-center">
+              <div className="flex-shrink-0">
+                <div className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center">
+                  <svg className="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z" />
+                  </svg>
+                </div>
+              </div>
+              <div className="ml-4">
+                <p className="text-sm font-medium text-gray-500">Total Registrations</p>
+                <p className="text-2xl font-semibold text-gray-900">{registrations.length}</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-white angular-form shadow p-6">
+            <div className="flex items-center">
+              <div className="flex-shrink-0">
+                <div className="w-8 h-8 bg-orange-100 rounded-lg flex items-center justify-center">
+                  <svg className="w-5 h-5 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+              </div>
+              <div className="ml-4">
+                <p className="text-sm font-medium text-gray-500">Pending</p>
+                <p className="text-2xl font-semibold text-orange-600">
+                  {registrations.filter((reg: any) => (reg.status || 'pending') === 'pending').length}
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-white angular-form shadow p-6">
+            <div className="flex items-center">
+              <div className="flex-shrink-0">
+                <div className="w-8 h-8 bg-emerald-100 rounded-lg flex items-center justify-center">
+                  <svg className="w-5 h-5 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+              </div>
+              <div className="ml-4">
+                <p className="text-sm font-medium text-gray-500">Approved</p>
+                <p className="text-2xl font-semibold text-emerald-600">
+                  {registrations.filter((reg: any) => reg.status === 'approved').length}
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-white angular-form shadow p-6">
+            <div className="flex items-center">
+              <div className="flex-shrink-0">
+                <div className="w-8 h-8 bg-red-100 rounded-lg flex items-center justify-center">
+                  <svg className="w-5 h-5 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+              </div>
+              <div className="ml-4">
+                <p className="text-sm font-medium text-gray-500">Rejected</p>
+                <p className="text-2xl font-semibold text-red-600">
+                  {registrations.filter((reg: any) => reg.status === 'rejected').length}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* Filters */}
         <div className="bg-white angular-form shadow mb-6">
           <div className="p-6">
             <h3 className="text-lg font-semibold text-gray-900 mb-4">Filters</h3>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
               <div>
                 <label className="form-label">Search</label>
                 <input
@@ -247,6 +511,20 @@ export default function RegistrationsManagement() {
                   <option value="no">First Time</option>
                 </select>
               </div>
+              
+              <div>
+                <label className="form-label">Status</label>
+                <select
+                  className="form-input"
+                  value={filters.status}
+                  onChange={(e) => setFilters({...filters, status: e.target.value})}
+                >
+                  <option value="">All Status</option>
+                  <option value="pending">Pending</option>
+                  <option value="approved">Approved</option>
+                  <option value="rejected">Rejected</option>
+                </select>
+              </div>
             </div>
           </div>
         </div>
@@ -269,6 +547,7 @@ export default function RegistrationsManagement() {
                   <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Contact</th>
                   <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">School & Region</th>
                   <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Type</th>
+                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
                   <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Presentation</th>
                   <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Date</th>
                   <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
@@ -327,6 +606,17 @@ export default function RegistrationsManagement() {
                       </div>
                     </td>
                     <td className="px-6 py-4">
+                      <span className={`inline-flex px-3 py-1 text-xs font-semibold rounded-full ${
+                        (registration.status || 'pending') === 'approved' 
+                          ? 'bg-emerald-100 text-emerald-800' 
+                          : (registration.status || 'pending') === 'rejected'
+                          ? 'bg-red-100 text-red-800'
+                          : 'bg-orange-100 text-orange-800'
+                      }`}>
+                        {(registration.status || 'pending').charAt(0).toUpperCase() + (registration.status || 'pending').slice(1)}
+                      </span>
+                    </td>
+                    <td className="px-6 py-4">
                       {registration.participationType === 'presenter' && (
                         <div>
                           <div className="text-sm font-medium text-gray-900">{registration.presentationTitle}</div>
@@ -340,15 +630,72 @@ export default function RegistrationsManagement() {
                       {new Date(registration.createdAt).toLocaleDateString()}
                     </td>
                     <td className="px-6 py-4">
-                      <button
-                        onClick={() => {/* TODO: View details modal */}}
-                        className="text-blue-600 hover:text-blue-900 transition-colors"
-                      >
-                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                        </svg>
-                      </button>
+                      <div className="flex items-center space-x-2">
+                        <button
+                          onClick={() => approveSingle(registration._id)}
+                          disabled={actionLoading === 'approve'}
+                          className="text-emerald-600 hover:text-emerald-900 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                          title="Approve registration"
+                        >
+                          {actionLoading === 'approve' ? (
+                            <svg className="animate-spin w-5 h-5" fill="none" viewBox="0 0 24 24">
+                              <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                              <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                            </svg>
+                          ) : (
+                            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                            </svg>
+                          )}
+                        </button>
+                        
+                        <button
+                          onClick={() => rejectSingle(registration._id)}
+                          disabled={actionLoading === 'reject'}
+                          className="text-amber-600 hover:text-amber-900 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                          title="Reject registration"
+                        >
+                          {actionLoading === 'reject' ? (
+                            <svg className="animate-spin w-5 h-5" fill="none" viewBox="0 0 24 24">
+                              <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                              <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                            </svg>
+                          ) : (
+                            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                          )}
+                        </button>
+                        
+                        <button
+                          onClick={() => deleteSingle(registration._id)}
+                          disabled={actionLoading === 'delete'}
+                          className="text-red-600 hover:text-red-900 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                          title="Delete registration"
+                        >
+                          {actionLoading === 'delete' ? (
+                            <svg className="animate-spin w-5 h-5" fill="none" viewBox="0 0 24 24">
+                              <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                              <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                            </svg>
+                          ) : (
+                            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                            </svg>
+                          )}
+                        </button>
+                        
+                        <button
+                          onClick={() => {/* TODO: View details modal */}}
+                          className="text-blue-600 hover:text-blue-900 transition-colors"
+                          title="View details"
+                        >
+                          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                          </svg>
+                        </button>
+                      </div>
                     </td>
                   </tr>
                 ))}

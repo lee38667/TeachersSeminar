@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { connectToDatabase } from '@/lib/mongodb';
+import { sendRegistrationConfirmation } from '@/lib/email';
 
 export async function POST(request: NextRequest) {
   try {
@@ -91,6 +92,16 @@ export async function POST(request: NextRequest) {
     // Save to MongoDB
     const result = await db.collection('registrations').insertOne(registrationData);
     console.log('✅ Registration saved with ID:', result.insertedId);
+    
+    // Send confirmation email
+    console.log('📧 Sending confirmation email...');
+    try {
+      await sendRegistrationConfirmation(registrationData);
+      console.log('✅ Confirmation email sent successfully');
+    } catch (emailError) {
+      console.error('❌ Failed to send confirmation email:', emailError);
+      // Don't fail the registration if email fails
+    }
     
     return NextResponse.json({ 
       success: true, 
