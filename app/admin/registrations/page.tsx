@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import * as XLSX from 'xlsx';
 import { useRouter } from 'next/navigation';
 
 export default function RegistrationsManagement() {
@@ -64,42 +65,33 @@ export default function RegistrationsManagement() {
     setFilteredRegistrations(filtered);
   };
 
-  const exportToCSV = () => {
+  const exportToExcel = () => {
     const headers = [
       'Name', 'Email', 'Phone', 'School', 'Region', 'Role', 'Years Teaching',
       'Participation Type', 'Has Attended Before', 'Presentation Title',
       'Topic Strand', 'Expectations', 'Registration Date'
     ];
 
-    const csvData = filteredRegistrations.map((reg: any) => [
-      reg.name,
-      reg.email,
-      reg.phoneNumber,
-      reg.school,
-      reg.region,
-      reg.role,
-      reg.yearsTeaching || '',
-      reg.participationType,
-      reg.hasAttendedBefore,
-      reg.presentationTitle || '',
-      reg.topicStrand || '',
-      reg.expectations || '',
-      new Date(reg.createdAt).toLocaleDateString()
-    ]);
+    const excelData = filteredRegistrations.map((reg: any) => ({
+      Name: reg.name || '',
+      Email: reg.email || '',
+      Phone: reg.phoneNumber || '',
+      School: reg.school || '',
+      Region: reg.region || '',
+      Role: reg.role || '',
+      'Years Teaching': reg.yearsTeaching || '',
+      'Participation Type': reg.participationType || '',
+      'Has Attended Before': reg.hasAttendedBefore || '',
+      'Presentation Title': reg.presentationTitle || '',
+      'Topic Strand': reg.topicStrand || '',
+      Expectations: reg.expectations || '',
+      'Registration Date': reg.createdAt ? new Date(reg.createdAt).toLocaleDateString() : ''
+    }));
 
-    const csvContent = [headers, ...csvData]
-      .map(row => row.map(field => `"${field}"`).join(','))
-      .join('\n');
-
-    const blob = new Blob([csvContent], { type: 'text/csv' });
-    const url = window.URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = `registrations-${new Date().toISOString().split('T')[0]}.csv`;
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-    window.URL.revokeObjectURL(url);
+    const worksheet = XLSX.utils.json_to_sheet(excelData, { header: headers });
+    const workbook = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(workbook, worksheet, 'Registrations');
+    XLSX.writeFile(workbook, `registrations-${new Date().toISOString().split('T')[0]}.xlsx`);
   };
 
   const handleSelectAll = (checked: boolean) => {
@@ -357,13 +349,13 @@ export default function RegistrationsManagement() {
               )}
               
               <button
-                onClick={exportToCSV}
+                onClick={exportToExcel}
                 className="flex items-center px-4 py-2 bg-green-600 text-white angular-button hover:bg-green-700 transition-colors"
               >
                 <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                 </svg>
-                Export CSV
+                Export Excel
               </button>
             </div>
           </div>
