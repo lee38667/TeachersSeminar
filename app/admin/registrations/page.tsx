@@ -67,13 +67,13 @@ export default function RegistrationsManagement() {
 
   const exportToExcel = () => {
     const headers = [
-      'Name', 'Email', 'Phone', 'School', 'Region', 'Role', 'Years Teaching',
+      'Full Name', 'Email', 'Phone', 'School', 'Region', 'Role', 'Years Teaching',
       'Participation Type', 'Has Attended Before', 'Presentation Title',
       'Topic Strand', 'Expectations', 'Registration Date'
     ];
 
     const excelData = filteredRegistrations.map((reg: any) => ({
-      Name: reg.name || '',
+      'Full Name': `${reg.firstName || ''} ${reg.lastName || ''}`.trim(),
       Email: reg.email || '',
       Phone: reg.phoneNumber || '',
       School: reg.school || '',

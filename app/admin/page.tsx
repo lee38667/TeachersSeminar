@@ -324,7 +324,7 @@ export default function AdminDashboard() {
                 {recentRegistrations.map((registration: any, index) => (
                   <tr key={index} className="hover:bg-gray-50">
                     <td className="px-6 py-4 whitespace-nowrap">
-                      <div className="text-sm font-medium text-gray-900">{registration.name}</div>
+                      <div className="text-sm font-medium text-gray-900">{registration.firstName} {registration.lastName}</div>
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap">
                       <div className="text-sm text-gray-500">{registration.email}</div>
